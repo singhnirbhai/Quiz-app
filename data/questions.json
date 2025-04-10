@@ -1,8 +1,11 @@
-{
-  "id": 1,
-  "subject": "Linux",
-  "question": "Which command lists files?",
-  "options": ["ls", "cd", "rm", "mkdir"],
-  "correctIndex": 0
-}
+[
+  {
+    "id": 1,
+    "subject": "Linux",
+    "question": "Which command lists files?",
+    "options": ["ls", "cd", "rm", "mkdir"],
+    "correctIndex": 0
+  }
+]
+
 
