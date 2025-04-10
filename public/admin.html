@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { margin-bottom: 20px; }
+    label { display: block; margin: 10px 0 5px; }
+    input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; }
+    button { padding: 10px 15px; background: #4caf50; color: white; border: none; cursor: pointer; }
+    .question-list { margin-top: 30px; }
+    .question-item { padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <!-- your content here -->
+</div>
+	
+  <h1>Admin Panel – Add Question</h1>
+
+  <label>Subject</label>
+  <select id="subject">
+    <option value="Linux">Linux</option>
+    <option value="Cloud">Cloud</option>
+    <option value="Docker">Docker</option>
+    <option value="Kubernetes">Kubernetes</option>
+    <option value="Terraform">Terraform</option>
+    <option value="Ansible">Ansible</option>
+    <option value="Python">Python</option>
+  </select>
+
+  <label>Question</label>
+  <textarea id="question"></textarea>
+
+  <label>Option A</label>
+  <input type="text" id="opt0">
+
+  <label>Option B</label>
+  <input type="text" id="opt1">
+
+  <label>Option C</label>
+  <input type="text" id="opt2">
+
+  <label>Option D</label>
+  <input type="text" id="opt3">
+
+  <label>Correct Option (0-3)</label>
+  <input type="number" id="correct" min="0" max="3">
+
+  <button onclick="addQuestion()">Add Question</button>
+
+  <div class="question-list" id="question-list">
+    <h2>All Questions</h2>
+  </div>
+
+
+
+
+<script>
+	if (localStorage.getItem("role") !== "admin") {
+  alert("Access denied. Admins only.");
+  window.location.href = "login.html";
+}
+    function addQuestion() {
+      const question = {
+        subject: document.getElementById('subject').value,
+        question: document.getElementById('question').value,
+        options: [
+          document.getElementById('opt0').value,
+          document.getElementById('opt1').value,
+          document.getElementById('opt2').value,
+          document.getElementById('opt3').value
+        ],
+        correctIndex: parseInt(document.getElementById('correct').value)
+      };
+
+      fetch('/api/admin/add-question', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(question)
+      }).then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            alert('Question added!');
+            loadQuestions();
+          }
+        });
+    }
+
+    function loadQuestions() {
+      fetch('/data/questions.json')
+        .then(res => res.json())
+        .then(questions => {
+          const list = document.getElementById('question-list');
+          list.innerHTML = '<h2>All Questions</h2>';
+          questions.reverse().forEach(q => {
+            const div = document.createElement('div');
+            div.className = 'question-item';
+            div.innerHTML = `
+              <strong>${q.subject}</strong><br>
+              Q: ${q.question}<br>
+              Options: ${q.options.join(', ')}<br>
+              Correct: ${q.options[q.correctIndex]}
+            `;
+            list.appendChild(div);
+          });
+        });
+    }
+
+    loadQuestions();
+  </script>
+
+  <button onclick="logout()">Logout</button>
+<script>
+  function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+
+ }
+ </script>
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <!-- your content here -->
+</div>
+	
+  <h1>Leaderboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Score</th>
+        <th>Total</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody id="score-table"></tbody>
+  </table>
+
+  <script>
+    fetch('/api/scores')
+      .then(res => res.json())
+      .then(scores => {
+        const table = document.getElementById("score-table");
+        scores.reverse().forEach(score => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${score.email}</td>
+            <td>${score.subject}</td>
+            <td>${score.score}</td>
+            <td>${score.total}</td>
+            <td>${score.time}</td>
+          `;
+          table.appendChild(row);
+        });
+      });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
