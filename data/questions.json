@@ -6,6 +6,21 @@
     "options": ["ls", "cd", "rm", "mkdir"],
     "correctIndex": 0
   }
+{
+    "subject": "Docker",
+    "question": "Which command is used to build a Docker image from a Dockerfile?",
+    "options": ["docker run", "docker build", "docker image", "docker compose"],
+    "correctIndex": 1
+  },
+  {
+    "subject": "Docker",
+    "question": "What does the command 'docker ps' do?",
+    "options": [
+      "Lists all Docker images",
+      "Starts a new container",
+      "Lists running containers",
+      "Displays Docker version"
+    ]
 ]
 
 
