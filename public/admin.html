@@ -59,10 +59,7 @@
   </div>
 
   <script>
-<<<<<<< HEAD
-=======
-    // Redirect non-admins
->>>>>>> f5884ff0003ccf51aba52b52498ee3a9c2025fda
+
     if (localStorage.getItem("role") !== "admin") {
       alert("Access denied. Admins only.");
       window.location.href = "login.html";
@@ -81,10 +78,7 @@
         correctIndex: parseInt(document.getElementById('correct').value)
       };
 
-<<<<<<< HEAD
-=======
-      // Basic validation
->>>>>>> f5884ff0003ccf51aba52b52498ee3a9c2025fda
+
       if (
         question.question.trim() === "" ||
         question.options.some(opt => opt.trim() === "") ||
