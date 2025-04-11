@@ -122,6 +122,7 @@
     let allQuestions = [];
     let currentQuestion = 0;
     let score = 0;
+    let wrongAnswers = [];
     let timerInterval;
     let timeLeft = 60;
 
@@ -137,6 +138,7 @@
 
           currentQuestion = 0;
           score = 0;
+          wrongAnswers = [];
           timeLeft = 60;
           document.getElementById('resultBox').innerText = "";
           showQuestion();
@@ -165,6 +167,12 @@
       const q = allQuestions[currentQuestion];
       if (selectedIndex === q.correctIndex) {
         score++;
+      } else {
+        wrongAnswers.push({
+          question: q.question,
+          yourAnswer: q.options[selectedIndex],
+          correctAnswer: q.options[q.correctIndex]
+        });
       }
       currentQuestion++;
       showQuestion();
@@ -190,7 +198,7 @@
       fetch('/api/submit-score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, score })
+        body: JSON.stringify({ email, score, wrongAnswers })
       });
 
       document.getElementById('resultBox').innerText = `🎉 Quiz Over! Your Score: ${score}/${allQuestions.length}`;
@@ -198,4 +206,8 @@
   </script>
 </body>
 </html>
+
+  
+ 
+
 
