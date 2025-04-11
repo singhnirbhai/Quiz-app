@@ -7,10 +7,58 @@
     "correctIndex": 0
   },
 {
+    "subject": "Linux",
+    "question": "Which command is used to list files in a directory?",
+    "options": ["list", "ls", "dirlist", "show"],
+    "correctIndex": 1
+  },
+  {
+    "subject": "Linux",
+    "question": "What does the 'pwd' command do?",
+    "options": ["Prints working directory", "Permanently wipe data", "Protects files", "Pauses system"],
+    "correctIndex": 0
+  },
+  {
+    "subject": "Linux",
+    "question": "Which command is used to change file permissions?",
+    "options": ["chperm", "chmod", "chown", "permset"],
+    "correctIndex": 1
+  },
+  {
+    "subject": "Linux",
+    "question": "What symbol represents the home directory?",
+    "options": ["/", "~", ".", ".."],
+    "correctIndex": 1
+  },
+  {
+    "subject": "Linux",
+    "question": "Which command is used to search for text within files?",
+    "options": ["search", "find", "grep", "scan"],
+    "correctIndex": 2
+  },
+  {
     "subject": "Docker",
     "question": "Which command is used to build a Docker image from a Dockerfile?",
     "options": ["docker run", "docker build", "docker image", "docker compose"],
     "correctIndex": 1
+  },
+ {
+    "subject": "Docker",
+    "question": "Which instruction in a Dockerfile sets the base image?",
+    "options": ["CMD", "FROM", "ENTRYPOINT", "BASE"],
+    "correctIndex": 1
+  },
+  {
+    "subject": "Docker",
+    "question": "Which Dockerfile instruction is used to set an environment variable?",
+    "options": ["ENV", "VAR", "SET", "EXPOSE"],
+    "correctIndex": 0
+  },
+  {
+    "subject": "Docker",
+    "question": "Which flag is used with 'docker run' to mount a volume?",
+    "options": ["--net", "-m", "-v", "--bind"],
+    "correctIndex": 2
   }
 ]
 
