@@ -65,16 +65,22 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-// ✅ Submit quiz score
+// ✅ Submit quiz score (now includes wrong answers)
 app.post('/api/submit-score', (req, res) => {
-  const { email, score } = req.body;
+  const { email, score, wrongAnswers } = req.body;
 
   if (!email || typeof score !== 'number') {
     return res.json({ success: false, message: "Email and valid score are required." });
   }
 
-  scores.push({ email, score });
+  const entry = { email, score, wrongAnswers: wrongAnswers || [] };
+  scores.push(entry);
+
   console.log("🎯 Score submitted:", email, "-", score);
+  if (wrongAnswers && wrongAnswers.length > 0) {
+    console.log("❌ Wrong Answers:\n", JSON.stringify(wrongAnswers, null, 2));
+  }
+
   res.json({ success: true, message: "Score submitted successfully!" });
 });
 
@@ -102,7 +108,8 @@ app.post('/api/admin/add-question', (req, res) => {
     subject,
     question,
     options,
-    answer: options[correctIndex]  // ✅ store actual answer
+    correctIndex,
+    answer: options[correctIndex]  // ✅ stored for backend validation or display
   };
 
   allQuestions.push(newQuestion);
@@ -122,11 +129,3 @@ app.get('/api/questions', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running at: http://localhost:${PORT}/login.html`);
 });
-
-
-
-
-
-
- 
- 
