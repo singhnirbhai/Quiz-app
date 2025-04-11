@@ -1,118 +1,200 @@
-<!DOCTYPE html>
+OCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .question { margin-bottom: 20px; }
-    .option { padding: 8px; margin: 4px 0; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; }
-    .correct { background-color: #c8e6c9; border-color: #4caf50; }
-    .wrong { background-color: #ffcdd2; border-color: #f44336; }
-    #timer { font-weight: bold; margin-bottom: 15px; font-size: 20px; color: #f44336; }
-    button { margin-top: 20px; padding: 10px 20px; border: none; background-color: #2196f3; color: #fff; border-radius: 6px; cursor: pointer; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #eef2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px 0;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .quiz-container {
+      background: white;
+      margin-top: 30px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 650px;
+      width: 90%;
+    }
+    .question {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 12px;
+    }
+    .options button {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      background: #f9f9f9;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .options button:hover {
+      background: #c8e6c9;
+      border-color: #2e7d32;
+    }
+    .result {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #2e7d32;
+      margin-top: 25px;
+    }
+    .timer {
+      font-size: 1.1rem;
+      color: #d32f2f;
+      margin-bottom: 15px;
+      text-align: right;
+    }
+    .subject-select {
+      margin-bottom: 20px;
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    .start-btn {
+      background: #388e3c;
+      color: white;
+      padding: 12px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .start-btn:hover {
+      background: #2e7d32;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-  <!-- your content here -->
-</div>
-	
-  <h1>Quiz</h1>
-  <div id="timer">Time left: 60</div>
-  <div id="quiz-container"></div>
-  <button onclick="submitQuiz()">Submit</button>
+  <header>
+    <h1>Student Quiz Portal</h1>
+  </header>
+
+  <div class="quiz-container">
+    <select id="subject" class="subject-select">
+      <option value="">Select Subject</option>
+      <option value="Linux">Linux</option>
+      <option value="Cloud">Cloud</option>
+      <option value="Docker">Docker</option>
+      <option value="Kubernetes">Kubernetes</option>
+      <option value="Terraform">Terraform</option>
+      <option value="Ansible">Ansible</option>
+      <option value="Python">Python</option>
+    </select>
+    <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+
+    <div class="timer" id="timer"></div>
+    <div class="question" id="questionBox"></div>
+    <ul class="options" id="optionBox"></ul>
+    <div class="result" id="resultBox"></div>
+  </div>
 
   <script>
-    const subject = localStorage.getItem("subject") || "Linux";
-    const studentEmail = localStorage.getItem("email") || "unknown@student.com";
-    const timerDuration = 60; // seconds
+    let allQuestions = [];
+    let currentQuestion = 0;
+    let score = 0;
+    let timerInterval;
+    let timeLeft = 60;
 
-    let timer;
-    let timeLeft = timerDuration;
-    let questions = [];
+    function startQuiz() {
+      const subject = document.getElementById('subject').value;
+      if (!subject) return alert("Please select a subject to start.");
 
-    function startTimer() {
-      const timerDisplay = document.getElementById("timer");
-      timer = setInterval(() => {
-        timeLeft--;
-        timerDisplay.textContent = "Time left: " + timeLeft;
-        if (timeLeft <= 0) {
-          clearInterval(timer);
-          submitQuiz();
-        }
-      }, 1000);
-    }
-
-    function loadQuestions() {
-      fetch(`/api/questions/${subject}`)
+      fetch('/api/questions')
         .then(res => res.json())
         .then(data => {
-          questions = data;
-          const container = document.getElementById("quiz-container");
-          data.forEach((q, index) => {
-            const div = document.createElement("div");
-            div.className = "question";
-            div.innerHTML = `
-              <p><strong>Q${index + 1}:</strong> ${q.question}</p>
-              ${q.options.map((opt, i) => `
-                <div class="option" onclick="selectOption(${index}, ${i}, this)">
-                  ${opt}
-                </div>`).join('')}
-            `;
-            container.appendChild(div);
-          });
+          allQuestions = data.filter(q => q.subject === subject);
+          if (allQuestions.length === 0) return alert("No questions found for this subject.");
+
+          currentQuestion = 0;
+          score = 0;
+          timeLeft = 60;
+          document.getElementById('resultBox').innerText = "";
+          showQuestion();
           startTimer();
         });
     }
 
-    let answers = [];
+    function showQuestion() {
+      const q = allQuestions[currentQuestion];
+      if (!q) return endQuiz();
 
-    function selectOption(qIndex, optIndex, element) {
-      const options = element.parentElement.querySelectorAll('.option');
-      options.forEach(opt => opt.classList.remove('selected'));
-      element.classList.add('selected');
-      answers[qIndex] = optIndex;
+      document.getElementById('questionBox').innerText = `Q${currentQuestion + 1}: ${q.question}`;
+      document.getElementById('optionBox').innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(idx);
+        const li = document.createElement('li');
+        li.appendChild(btn);
+        document.getElementById('optionBox').appendChild(li);
+      });
     }
 
-    function submitQuiz() {
-      clearInterval(timer);
-      let score = 0;
-      const container = document.getElementById("quiz-container");
-
-      questions.forEach((q, index) => {
-        const userAnswer = answers[index];
-        const correctAnswer = q.correctIndex;
-        const questionDiv = container.children[index];
-        const optionDivs = questionDiv.querySelectorAll('.option');
-
-        optionDivs.forEach((optDiv, i) => {
-          optDiv.onclick = null; // disable clicks
-          if (i === correctAnswer) optDiv.classList.add("correct");
-          if (userAnswer === i && i !== correctAnswer) optDiv.classList.add("wrong");
-        });
-
-        if (userAnswer === correctAnswer) score++;
-      });
-
-      // Save score
-      fetch('/api/scores', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: studentEmail,
-          subject,
-          score,
-          total: questions.length,
-          time: new Date().toLocaleString()
-        })
-      });
-
-      alert(`Quiz submitted! You scored ${score}/${questions.length}`);
+    function checkAnswer(selectedIndex) {
+      const q = allQuestions[currentQuestion];
+      if (selectedIndex === q.correctIndex) {
+        score++;
+      }
+      currentQuestion++;
+      showQuestion();
     }
 
-    loadQuestions();
+    function startTimer() {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById('timer').innerText = `⏱️   Time Left: ${timeLeft}s`;
+        if (timeLeft <= 0) endQuiz();
+      }, 1000);
+    }
+
+    function endQuiz() {
+      clearInterval(timerInterval);
+      document.getElementById('questionBox').innerText = "";
+      document.getElementById('optionBox').innerHTML = "";
+      document.getElementById('timer').innerText = "";
+
+      const email = localStorage.getItem('email') || prompt("Enter your email:");
+
+      fetch('/api/submit-score', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, score })
+      });
+
+      document.getElementById('resultBox').innerText = `🎉 Quiz Over! Your Score: ${score}/${allQuestions.length}`;
+    }
   </script>
 </body>
 </html>
