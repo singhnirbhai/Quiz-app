@@ -1,10 +1,10 @@
 
 // Serve static files like login.html, register.html, etc.
->>>>>>> f5884ff0003ccf51aba52b52498ee3a9c2025fda
+
 app.use(express.static('public'));
 app.use(express.json());
 
-<<<<<<< HEAD
+
 // In-memory user list
 const users = [
   { email: "admin@quiz.com", password: "admin123", role: "admin" },
@@ -50,7 +50,7 @@ app.post('/api/register', (req, res) => {
 });
 
 // ✅ Login API
-=======
+
 // Middleware to parse JSON
 app.use(express.json());
 
@@ -61,7 +61,7 @@ const users = [
 ];
 
 // Login API
->>>>>>> f5884ff0003ccf51aba52b52498ee3a9c2025fda
+
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const user = users.find(u => u.email === email && u.password === password);
@@ -73,7 +73,7 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-<<<<<<< HEAD
+
 // ✅ Submit quiz score
 app.post('/api/submit-score', (req, res) => {
   const { email, score } = req.body;
@@ -130,7 +130,7 @@ app.get('/api/questions', (req, res) => {
 // ✅ Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at: http://localhost:${PORT}/login.html`);
-=======
+
 // Register API
 app.post('/api/register', (req, res) => {
   const { email, password, role } = req.body;
@@ -151,5 +151,5 @@ app.post('/api/register', (req, res) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`✅ Server is running at http://localhost:${PORT}/login.html`);
->>>>>>> f5884ff0003ccf51aba52b52498ee3a9c2025fda
+
 });
