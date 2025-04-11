@@ -15,54 +15,56 @@
 </head>
 <body>
   <div class="container">
-  <!-- your content here -->
-</div>
-	
-  <h1>Admin Panel – Add Question</h1>
+    <h1>Admin Panel – Add Question</h1>
 
-  <label>Subject</label>
-  <select id="subject">
-    <option value="Linux">Linux</option>
-    <option value="Cloud">Cloud</option>
-    <option value="Docker">Docker</option>
-    <option value="Kubernetes">Kubernetes</option>
-    <option value="Terraform">Terraform</option>
-    <option value="Ansible">Ansible</option>
-    <option value="Python">Python</option>
-  </select>
+    <label>Subject</label>
+    <select id="subject">
+      <option value="Linux">Linux</option>
+      <option value="Cloud">Cloud</option>
+      <option value="Docker">Docker</option>
+      <option value="Kubernetes">Kubernetes</option>
+      <option value="Terraform">Terraform</option>
+      <option value="Ansible">Ansible</option>
+      <option value="Python">Python</option>
+    </select>
 
-  <label>Question</label>
-  <textarea id="question"></textarea>
+    <label>Question</label>
+    <textarea id="question"></textarea>
 
-  <label>Option A</label>
-  <input type="text" id="opt0">
+    <label>Option A</label>
+    <input type="text" id="opt0">
 
-  <label>Option B</label>
-  <input type="text" id="opt1">
+    <label>Option B</label>
+    <input type="text" id="opt1">
 
-  <label>Option C</label>
-  <input type="text" id="opt2">
+    <label>Option C</label>
+    <input type="text" id="opt2">
 
-  <label>Option D</label>
-  <input type="text" id="opt3">
+    <label>Option D</label>
+    <input type="text" id="opt3">
 
-  <label>Correct Option (0-3)</label>
-  <input type="number" id="correct" min="0" max="3">
+    <label>Correct Option</label>
+    <select id="correct">
+      <option value="0">A</option>
+      <option value="1">B</option>
+      <option value="2">C</option>
+      <option value="3">D</option>
+    </select>
 
-  <button onclick="addQuestion()">Add Question</button>
+    <button onclick="addQuestion()">Add Question</button>
 
-  <div class="question-list" id="question-list">
-    <h2>All Questions</h2>
+    <div class="question-list" id="question-list">
+      <h2>All Questions</h2>
+    </div>
   </div>
 
+  <script>
+    // Redirect non-admins
+    if (localStorage.getItem("role") !== "admin") {
+      alert("Access denied. Admins only.");
+      window.location.href = "login.html";
+    }
 
-
-
-<script>
-	if (localStorage.getItem("role") !== "admin") {
-  alert("Access denied. Admins only.");
-  window.location.href = "login.html";
-}
     function addQuestion() {
       const question = {
         subject: document.getElementById('subject').value,
@@ -76,17 +78,34 @@
         correctIndex: parseInt(document.getElementById('correct').value)
       };
 
+      // Basic validation
+      if (
+        question.question.trim() === "" ||
+        question.options.some(opt => opt.trim() === "") ||
+        isNaN(question.correctIndex)
+      ) {
+        alert("Please fill in all fields correctly.");
+        return;
+      }
+
       fetch('/api/admin/add-question', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(question)
-      }).then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            alert('Question added!');
-            loadQuestions();
-          }
-        });
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert('Question added!');
+          loadQuestions();
+        } else {
+          alert('Failed to add question.');
+        }
+      })
+      .catch(err => {
+        console.error('Error:', err);
+        alert('Error adding question. See console.');
+      });
     }
 
     function loadQuestions() {
@@ -110,16 +129,15 @@
     }
 
     loadQuestions();
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
   </script>
 
   <button onclick="logout()">Logout</button>
-<script>
-  function logout() {
-    localStorage.clear();
-    window.location.href = "login.html";
-
- }
- </script>
 </body>
 </html>
+
 
