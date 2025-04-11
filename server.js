@@ -1,19 +1,13 @@
 const express = require('express');
-
 const fs = require('fs');
 const path = require('path');
-const app = express();
-const PORT = 3000;
-
 
 const app = express();
 const PORT = 3000;
 
-// Serve static files like login.html, register.html, etc.
-
+// Middleware
 app.use(express.static('public'));
 app.use(express.json());
-
 
 // In-memory user list
 const users = [
@@ -24,7 +18,7 @@ const users = [
 const scores = [];
 const questionFilePath = path.join(__dirname, 'data', 'questions.json');
 
-// Helper: Load questions from JSON file
+// Load questions from file
 function loadQuestions() {
   try {
     if (!fs.existsSync(questionFilePath)) return [];
@@ -36,7 +30,7 @@ function loadQuestions() {
   }
 }
 
-// Helper: Save questions to JSON file
+// Save questions to file
 function saveQuestions(questions) {
   fs.writeFileSync(questionFilePath, JSON.stringify(questions, null, 2));
 }
@@ -60,18 +54,6 @@ app.post('/api/register', (req, res) => {
 });
 
 // ✅ Login API
-
-// Middleware to parse JSON
-app.use(express.json());
-
-// Single shared user list (in-memory)
-const users = [
-  { email: "admin@example.com", password: "admin123", role: "admin" },
-  { email: "user@example.com", password: "user123", role: "student" }
-];
-
-// Login API
-
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const user = users.find(u => u.email === email && u.password === password);
@@ -82,7 +64,6 @@ app.post('/api/login', (req, res) => {
     res.json({ success: false, message: "Invalid credentials" });
   }
 });
-
 
 // ✅ Submit quiz score
 app.post('/api/submit-score', (req, res) => {
@@ -121,7 +102,7 @@ app.post('/api/admin/add-question', (req, res) => {
     subject,
     question,
     options,
-    answer: options[correctIndex]  // ✅ store actual answer, not just index
+    answer: options[correctIndex]  // ✅ store actual answer
   };
 
   allQuestions.push(newQuestion);
@@ -140,29 +121,9 @@ app.get('/api/questions', (req, res) => {
 // ✅ Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at: http://localhost:${PORT}/login.html`);
-
-// Register API
-app.post('/api/register', (req, res) => {
-  const { email, password, role } = req.body;
-
-  if (!email || !password || !role) {
-    return res.json({ success: false, message: "All fields are required." });
-  }
-
-  const exists = users.find(u => u.email === email);
-  if (exists) {
-    return res.json({ success: false, message: "User already registered." });
-  }
-
-  users.push({ email, password, role });
-  res.json({ success: true, message: "Registration successful!" });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`✅ Server is running at http://localhost:${PORT}/login.html`);
 
-});
 
 
 
