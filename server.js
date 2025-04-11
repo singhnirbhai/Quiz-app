@@ -5,30 +5,50 @@ const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
-// Middlewares
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// File functions
-const loadData = (file) => JSON.parse(fs.readFileSync(`./data/${file}`));
-const saveData = (file, data) => fs.writeFileSync(`./data/${file}`, JSON.stringify(data, null, 2));
-// Register
+// Helper functions
+const loadData = (file) => {
+  try {
+    return JSON.parse(fs.readFileSync(`./data/${file}`));
+  } catch {
+    return [];
+  }
+};
+
+const saveData = (file, data) => {
+  fs.writeFileSync(`./data/${file}`, JSON.stringify(data, null, 2));
+};
+
+// Register user
 app.post('/api/register', (req, res) => {
   const { email, password, role } = req.body;
   const users = loadData('users.json');
+
+  if (!email || !password || password.length < 4) {
+    return res.json({ success: false, message: "Email and password (min 4 chars) required" });
+  }
 
   if (users.some(u => u.email === email)) {
     return res.json({ success: false, message: "User already exists" });
   }
 
-  users.push({ email, password, role });
+  const newUser = {
+    id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
+    email,
+    password,
+    role
+  };
+
+  users.push(newUser);
   saveData('users.json', users);
   res.json({ success: true, message: "Registered successfully" });
 });
 
-
-// ✅ LOGIN
+// Login user
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const users = loadData('users.json');
@@ -40,14 +60,14 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-// ✅ GET QUESTIONS BY SUBJECT
+// Get questions by subject
 app.get('/api/questions/:subject', (req, res) => {
   const subject = req.params.subject;
   const questions = loadData('questions.json').filter(q => q.subject === subject);
   res.json(questions);
 });
 
-// ✅ SUBMIT SCORE
+// Submit score
 app.post('/api/scores', (req, res) => {
   const scores = loadData('scores.json');
   scores.push(req.body);
@@ -55,23 +75,25 @@ app.post('/api/scores', (req, res) => {
   res.json({ success: true });
 });
 
-// ✅ GET SCORES (leaderboard)
+// Get all scores
 app.get('/api/scores', (req, res) => {
   const scores = loadData('scores.json');
   res.json(scores);
 });
 
-// ✅ ADD QUESTION (admin only)
+// Admin adds new question
 app.post('/api/admin/add-question', (req, res) => {
   const questions = loadData('questions.json');
-  const newQuestion = { id: questions.length + 1, ...req.body };
+  const newQuestion = {
+    id: questions.length + 1,
+    ...req.body
+  };
   questions.push(newQuestion);
   saveData('questions.json', questions);
   res.json({ success: true });
 });
 
-// ✅ START SERVER
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
