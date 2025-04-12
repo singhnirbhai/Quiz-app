@@ -9,10 +9,9 @@ const PORT = 3000;
 app.use(express.static('public'));
 app.use(express.json());
 
-// In-memory user list
+// In-memory user list (only admin hardcoded)
 const users = [
-  { email: "admin@quiz.com", password: "admin123", role: "admin" },
-  { email: "user@example.com", password: "user123", role: "student" }
+  { email: "admin@quiz.com", password: "admin123", role: "admin" }
 ];
 
 const scores = [];
@@ -37,9 +36,9 @@ function saveQuestions(questions) {
 
 // ✅ Register API
 app.post('/api/register', (req, res) => {
-  const { email, password, role } = req.body;
+  const { email, password } = req.body;
 
-  if (!email || !password || !role) {
+  if (!email || !password) {
     return res.json({ success: false, message: "All fields are required." });
   }
 
@@ -48,8 +47,8 @@ app.post('/api/register', (req, res) => {
     return res.json({ success: false, message: "User already registered." });
   }
 
-  users.push({ email, password, role });
-  console.log("👤 Registered:", email, "-", role);
+  users.push({ email, password, role: "student" }); // Force role to student
+  console.log("👤 Registered:", email);
   res.json({ success: true, message: "Registration successful!" });
 });
 
