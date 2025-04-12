@@ -11,7 +11,7 @@
       margin-top: 100px;
     }
 
-    input, select {
+    input {
       padding: 10px;
       margin: 5px;
       width: 220px;
@@ -34,11 +34,6 @@
   <input type="email" id="email" placeholder="Email" required><br>
   <input type="password" id="password" placeholder="Password" required><br>
 
-  <select id="role">
-    <option value="user">Student</option>
-    <option value="admin">Admin</option>
-  </select><br>
-
   <button onclick="register()">Register</button>
   <p id="message"></p>
 
@@ -46,7 +41,6 @@
     function register() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
-      const role = document.getElementById("role").value;
 
       if (!email || !password) {
         document.getElementById("message").textContent = "Please fill all fields.";
@@ -56,13 +50,13 @@
       fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, role })
+        body: JSON.stringify({ email, password }) // 👈 only send email & password
       })
       .then(res => res.json())
       .then(data => {
         document.getElementById("message").textContent = data.message;
         if (data.success) {
-          setTimeout(() => window.location.href = "index.html", 1500); // Redirect to login page
+          setTimeout(() => window.location.href = "index.html", 1500); // Redirect to login
         }
       })
       .catch(err => {
@@ -73,4 +67,3 @@
   </script>
 </body>
 </html>
-
