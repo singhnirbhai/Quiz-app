@@ -3,159 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Quiz Portal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Student Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #4CAF50;
-      --primary-dark: #388E3C;
-      --bg: #f0f4f8;
-      --card-bg: #ffffff;
-      --text-dark: #333;
-      --text-light: #888;
-      --error: #d32f2f;
-      --accent: #e8f5e9;
-    }
-
-    * {
+    body {
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text-dark);
+      background: #eef2f5;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
     }
-
     header {
-      width: 100%;
-      background: var(--primary);
-      padding: 1.5rem 0;
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .quiz-container {
-      background: var(--card-bg);
-      margin-top: 40px;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      max-width: 700px;
-      width: 90%;
-      transition: all 0.3s ease;
-    }
-
-    select, button {
-      font-size: 1rem;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    button {
-      background: var(--primary);
+      background-color: #2e7d32;
       color: white;
-      border: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
+      padding: 20px 0;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
-
-    button:hover {
-      background: var(--primary-dark);
+    .quiz-container {
+      background: white;
+      margin-top: 30px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 650px;
+      width: 90%;
     }
-
     .question {
-      font-size: 1.3rem;
-      font-weight: 600;
+      font-size: 1.2rem;
       margin-bottom: 20px;
+      font-weight: bold;
     }
-
     .options {
       list-style: none;
+      padding: 0;
     }
-
     .options li {
-      margin-bottom: 15px;
-    }
-
-    .options button {
-      background: #f9f9f9;
-      border: 2px solid #ccc;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .options button:hover {
-      background: var(--accent);
-      border-color: var(--primary-dark);
-    }
-
-    .result {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--primary-dark);
-      margin-top: 25px;
-    }
-
-    .wrong-answers {
-      margin-top: 25px;
-      background-color: #fff0f0;
-      border-left: 4px solid var(--error);
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .wrong-answers h3 {
-      color: var(--error);
-      margin-bottom: 15px;
-    }
-
-    .wrong-answers li {
       margin-bottom: 12px;
     }
-
-    .timer {
+    .options button {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      background: #f9f9f9;
       font-size: 1rem;
-      font-weight: 600;
-      color: var(--error);
-      text-align: right;
-      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .options button:hover {
+      background: #c8e6c9;
+      border-color: #2e7d32;
+    }
+    .result {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #2e7d32;
+      margin-top: 25px;
+    }
+    .wrong-answers {
+      margin-top: 20px;
+      background-color: #fff3f3;
+      border: 1px solid #f8c0c0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .wrong-answers h3 {
+      color: #d32f2f;
+    }
+    .wrong-answers ul {
+      padding-left: 20px;
+    }
+    .wrong-answers li {
       margin-bottom: 10px;
     }
-
-    .progress-bar {
-      height: 10px;
-      background: #e0e0e0;
-      border-radius: 10px;
-      overflow: hidden;
+    .timer {
+      font-size: 1.1rem;
+      color: #d32f2f;
+      margin-bottom: 15px;
+      text-align: right;
+    }
+    .subject-select {
       margin-bottom: 20px;
-    }
-
-    .progress-bar-inner {
-      height: 100%;
       width: 100%;
-      background: var(--primary-dark);
-      transition: width 1s linear;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 6px;
     }
-
-    @media (max-width: 500px) {
-      .quiz-container {
-        padding: 20px;
-      }
-
-      .question {
-        font-size: 1.1rem;
-      }
+    .start-btn {
+      background: #388e3c;
+      color: white;
+      padding: 12px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .start-btn:hover {
+      background: #2e7d32;
     }
   </style>
 </head>
@@ -165,8 +116,8 @@
   </header>
 
   <div class="quiz-container">
-    <select id="subject">
-      <option value="">📘 Select a Subject</option>
+    <select id="subject" class="subject-select">
+      <option value="">Select Subject</option>
       <option value="Linux">Linux</option>
       <option value="Cloud">Cloud</option>
       <option value="Docker">Docker</option>
@@ -175,15 +126,11 @@
       <option value="Ansible">Ansible</option>
       <option value="Python">Python</option>
     </select>
-
-    <button onclick="startQuiz()">🚀 Start Quiz</button>
+    <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
 
     <div class="timer" id="timer"></div>
-    <div class="progress-bar"><div class="progress-bar-inner" id="progressBar"></div></div>
-
     <div class="question" id="questionBox"></div>
     <ul class="options" id="optionBox"></ul>
-
     <div class="result" id="resultBox"></div>
     <div class="wrong-answers" id="wrongBox"></div>
   </div>
@@ -198,23 +145,20 @@
 
     function startQuiz() {
       const subject = document.getElementById('subject').value;
-      if (!subject) return alert("Please select a subject to begin.");
+      if (!subject) return alert("Please select a subject to start.");
 
       fetch('/api/questions')
         .then(res => res.json())
         .then(data => {
           allQuestions = data.filter(q => q.subject === subject);
-          if (allQuestions.length === 0) return alert("No questions available for this subject.");
+          if (allQuestions.length === 0) return alert("No questions found for this subject.");
 
           currentQuestion = 0;
           score = 0;
           wrongAnswers = [];
           timeLeft = 60;
-
           document.getElementById('resultBox').innerText = "";
           document.getElementById('wrongBox').innerHTML = "";
-          document.getElementById('progressBar').style.width = "100%";
-
           showQuestion();
           startTimer();
         });
@@ -256,8 +200,7 @@
       clearInterval(timerInterval);
       timerInterval = setInterval(() => {
         timeLeft--;
-        document.getElementById('timer').innerText = `⏱️ Time Left: ${timeLeft}s`;
-        document.getElementById('progressBar').style.width = (timeLeft / 60) * 100 + "%";
+        document.getElementById('timer').innerText = `⏱️   Time Left: ${timeLeft}s`;
         if (timeLeft <= 0) endQuiz();
       }, 1000);
     }
@@ -267,7 +210,6 @@
       document.getElementById('questionBox').innerText = "";
       document.getElementById('optionBox').innerHTML = "";
       document.getElementById('timer').innerText = "";
-      document.getElementById('progressBar').style.width = "0%";
 
       const email = localStorage.getItem('email') || prompt("Enter your email:");
 
@@ -277,12 +219,12 @@
         body: JSON.stringify({ email, score, wrongAnswers })
       });
 
-      document.getElementById('resultBox').innerText = `🎉 Quiz Complete! You scored ${score}/${allQuestions.length}`;
+      document.getElementById('resultBox').innerText = `🎉 Quiz Over! Your Score: ${score}/${allQuestions.length}`;
 
       if (wrongAnswers.length > 0) {
-        let wrongHtml = '<h3>Oops! Review these:</h3><ul>';
+        let wrongHtml = '<h3>Incorrect Answers:</h3><ul>';
         wrongAnswers.forEach(item => {
-          wrongHtml += `<li><strong>Q:</strong> ${item.question}<br><strong>Your Answer:</strong> ${item.yourAnswer}<br><strong>Correct:</strong> ${item.correctAnswer}</li>`;
+          wrongHtml += `<li><strong>Q:</strong> ${item.question}<br><strong>Your Answer:</strong> ${item.yourAnswer}<br><strong>Correct Answer:</strong> ${item.correctAnswer}</li>`;
         });
         wrongHtml += '</ul>';
         document.getElementById('wrongBox').innerHTML = wrongHtml;
