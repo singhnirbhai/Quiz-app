@@ -9,7 +9,7 @@ const PORT = 3000;
 app.use(express.static('public'));
 app.use(express.json());
 
-// In-memory user list (only admin hardcoded)
+// In-memory users (admin + students)
 const users = [
   { email: "admin@quiz.com", password: "admin123", role: "admin" }
 ];
@@ -17,7 +17,7 @@ const users = [
 const scores = [];
 const questionFilePath = path.join(__dirname, 'data', 'questions.json');
 
-// Load questions from file
+// Load questions
 function loadQuestions() {
   try {
     if (!fs.existsSync(questionFilePath)) return [];
@@ -29,12 +29,12 @@ function loadQuestions() {
   }
 }
 
-// Save questions to file
+// Save questions
 function saveQuestions(questions) {
   fs.writeFileSync(questionFilePath, JSON.stringify(questions, null, 2));
 }
 
-// ✅ Register API
+// ✅ Register student
 app.post('/api/register', (req, res) => {
   const { email, password } = req.body;
 
@@ -47,12 +47,12 @@ app.post('/api/register', (req, res) => {
     return res.json({ success: false, message: "User already registered." });
   }
 
-  users.push({ email, password, role: "student" }); // Force role to student
+  users.push({ email, password, role: "student" });
   console.log("👤 Registered:", email);
   res.json({ success: true, message: "Registration successful!" });
 });
 
-// ✅ Login API
+// ✅ Login
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const user = users.find(u => u.email === email && u.password === password);
@@ -64,26 +64,21 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-// ✅ Submit quiz score (now includes wrong answers)
+// ✅ Submit quiz score
 app.post('/api/submit-score', (req, res) => {
-  const { email, score, wrongAnswers } = req.body;
+  const { email, score, subject, total, time, wrongAnswers } = req.body;
 
   if (!email || typeof score !== 'number') {
     return res.json({ success: false, message: "Email and valid score are required." });
   }
 
-  const entry = { email, score, wrongAnswers: wrongAnswers || [] };
+  const entry = { email, score, subject, total, time, wrongAnswers: wrongAnswers || [] };
   scores.push(entry);
 
-  console.log("🎯 Score submitted:", email, "-", score);
-  if (wrongAnswers && wrongAnswers.length > 0) {
-    console.log("❌ Wrong Answers:\n", JSON.stringify(wrongAnswers, null, 2));
-  }
-
-  res.json({ success: true, message: "Score submitted successfully!" });
+  res.json({ success: true, message: "Score submitted!", redirect: "/leaderboard.html" });
 });
 
-// ✅ Get all quiz scores
+// ✅ Leaderboard data
 app.get('/api/scoreboard', (req, res) => {
   res.json(scores);
 });
@@ -93,10 +88,8 @@ app.post('/api/admin/add-question', (req, res) => {
   const { subject, question, options, correctIndex } = req.body;
 
   if (
-    !subject ||
-    !question ||
-    !Array.isArray(options) ||
-    options.length < 2 ||
+    !subject || !question ||
+    !Array.isArray(options) || options.length < 2 ||
     typeof correctIndex !== 'number'
   ) {
     return res.status(400).json({ success: false, message: "Invalid question data." });
@@ -108,20 +101,41 @@ app.post('/api/admin/add-question', (req, res) => {
     question,
     options,
     correctIndex,
-    answer: options[correctIndex]  // ✅ stored for backend validation or display
+    answer: options[correctIndex]
   };
 
   allQuestions.push(newQuestion);
   saveQuestions(allQuestions);
 
   console.log("📘 Question added:", subject, "-", question);
-  res.json({ success: true, message: "Question added successfully!" });
+  res.json({ success: true, message: "Question added!" });
 });
 
 // ✅ Get all questions
 app.get('/api/questions', (req, res) => {
+  const { subject } = req.query; // Get subject query parameter
   const allQuestions = loadQuestions();
-  res.json(allQuestions);
+
+  if (subject) {
+    // Filter questions by subject if provided
+    const filteredQuestions = allQuestions.filter(q => q.subject.toLowerCase() === subject.toLowerCase());
+    res.json(filteredQuestions);
+  } else {
+    // Return all questions if no subject specified
+    res.json(allQuestions);
+  }
+});
+
+// ✅ Get all subjects
+app.get('/api/subjects', (req, res) => {
+  const allQuestions = loadQuestions();
+  const subjects = [...new Set(allQuestions.map(q => q.subject))]; // Extract unique subjects
+  res.json(subjects);
+});
+
+// ✅ Serve leaderboard.html directly
+app.get('/leaderboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'leaderboard.html'));
 });
 
 // ✅ Start server
