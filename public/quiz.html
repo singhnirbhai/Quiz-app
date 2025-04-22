@@ -6,133 +6,148 @@
   <title>Student Quiz</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
+    body, html {
       margin: 0;
       padding: 0;
-      background: #eef2f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #ffcc99 50%, #a8e6cf 50%);
+      background-size: 100% 100%;
     }
-    header {
-      background-color: #2e7d32;
-      color: white;
-      padding: 20px 0;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
+
     .quiz-container {
-      background: white;
-      margin-top: 30px;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      max-width: 650px;
+      background-color: rgba(255, 255, 255, 0.9);
       width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
     }
-    .question {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+
+    .header {
+      font-size: 2.5rem;
       font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 20px;
     }
-    .options {
-      list-style: none;
-      padding: 0;
+
+    .subject-list {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
     }
+
+    .subject-btn, .start-btn, .leaderboard-btn {
+      background: #a8e6cf;
+      color: #333;
+      padding: 12px 20px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .subject-btn:hover, .start-btn:hover, .leaderboard-btn:hover {
+      background: #ffcc99;
+      color: #000;
+    }
+
+    .question-container {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid #a8e6cf;
+    }
+
+    .question {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
     .options li {
-      margin-bottom: 12px;
+      list-style: none;
+      margin-bottom: 10px;
     }
+
     .options button {
       width: 100%;
-      padding: 12px;
-      border: 2px solid #ccc;
-      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 8px;
       font-size: 1rem;
-      border-radius: 6px;
+      background: #fce5cd;
+      border: 2px solid #a8e6cf;
       cursor: pointer;
       transition: 0.3s ease;
     }
+
     .options button:hover {
-      background: #c8e6c9;
-      border-color: #2e7d32;
+      background: #dcedc8;
     }
-    .result {
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #2e7d32;
-      margin-top: 25px;
-    }
-    .wrong-answers {
-      margin-top: 20px;
-      background-color: #fff3f3;
-      border: 1px solid #f8c0c0;
-      padding: 15px;
-      border-radius: 8px;
-    }
-    .wrong-answers h3 {
-      color: #d32f2f;
-    }
-    .wrong-answers ul {
-      padding-left: 20px;
-    }
-    .wrong-answers li {
-      margin-bottom: 10px;
-    }
+
     .timer {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-weight: bold;
       font-size: 1.1rem;
       color: #d32f2f;
-      margin-bottom: 15px;
-      text-align: right;
+      background: #fff3e0;
+      padding: 6px 12px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
-    .subject-select {
-      margin-bottom: 20px;
-      width: 100%;
-      font-size: 1rem;
-      padding: 10px;
-      border-radius: 6px;
+
+    .correct-answer {
+      background-color: #c8e6c9 !important;
+      border-color: #388e3c !important;
     }
-    .start-btn {
-      background: #388e3c;
-      color: white;
-      padding: 12px 18px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
+
+    .wrong-answer {
+      background-color: #ffcdd2 !important;
+      border-color: #e53935 !important;
     }
-    .start-btn:hover {
-      background: #2e7d32;
+
+    #resultBox {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #2c3e50;
+    }
+
+    .subject-list {
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Student Quiz Portal</h1>
-  </header>
 
   <div class="quiz-container">
-    <select id="subject" class="subject-select">
-      <option value="">Select Subject</option>
-      <option value="Linux">Linux</option>
-      <option value="Cloud">Cloud</option>
-      <option value="Docker">Docker</option>
-      <option value="Kubernetes">Kubernetes</option>
-      <option value="Terraform">Terraform</option>
-      <option value="Ansible">Ansible</option>
-      <option value="Python">Python</option>
-    </select>
-    <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+    <h1 class="header">Welcome To Grras Quiz</h1>
 
-    <div class="timer" id="timer"></div>
-    <div class="question" id="questionBox"></div>
-    <ul class="options" id="optionBox"></ul>
-    <div class="result" id="resultBox"></div>
-    <div class="wrong-answers" id="wrongBox"></div>
+    <!-- Subject Buttons -->
+    <div class="subject-list" id="subjectList"></div>
+
+    <!-- Start and Leaderboard Buttons -->
+    <button class="start-btn" onclick="startQuiz()" style="display: none;">Start Quiz</button>
+    <button class="leaderboard-btn" onclick="goToLeaderboard()">View Leaderboard</button>
+
+    <!-- Question Display -->
+    <div class="question-container" style="display: none;">
+      <div class="timer" id="timer"></div>
+      <div class="question" id="questionBox"></div>
+      <ul class="options" id="optionBox"></ul>
+    </div>
+
+    <!-- Result -->
+    <div id="resultBox"></div>
   </div>
 
   <script>
@@ -142,25 +157,60 @@
     let wrongAnswers = [];
     let timerInterval;
     let timeLeft = 30;
+    let selectedSubject = "";
+
+    function fetchSubjects() {
+      fetch('/api/subjects')
+        .then(res => res.json())
+        .then(subjects => {
+          const subjectListElement = document.getElementById('subjectList');
+          if (subjects.length === 0) {
+            subjectListElement.innerHTML = "<p>No subjects available.</p>";
+            return;
+          }
+
+          subjects.forEach(subject => {
+            const button = document.createElement('button');
+            button.innerText = subject;
+            button.classList.add('subject-btn');
+            button.onclick = () => selectSubject(subject);
+            subjectListElement.appendChild(button);
+          });
+        })
+        .catch(error => {
+          console.error("Error fetching subjects:", error);
+          alert("Failed to load subjects.");
+        });
+    }
+
+    function selectSubject(subject) {
+      selectedSubject = subject;
+      document.querySelector('.subject-list').style.display = 'none';
+      document.querySelector('.start-btn').style.display = 'inline-block';
+    }
 
     function startQuiz() {
-      const subject = document.getElementById('subject').value;
-      if (!subject) return alert("Please select a subject to start.");
+      if (!selectedSubject) return alert("Please select a subject first.");
 
-      fetch('/api/questions')
+      fetch(`/api/questions?subject=${selectedSubject}`)
         .then(res => res.json())
         .then(data => {
-          allQuestions = data.filter(q => q.subject === subject);
+          allQuestions = data;
           if (allQuestions.length === 0) return alert("No questions found for this subject.");
-
+          
           currentQuestion = 0;
           score = 0;
           wrongAnswers = [];
           timeLeft = 30;
-          document.getElementById('resultBox').innerText = "";
-          document.getElementById('wrongBox').innerHTML = "";
+
+          document.querySelector('.start-btn').style.display = 'none';
+          document.querySelector('.question-container').style.display = 'block';
           showQuestion();
           startTimer();
+        })
+        .catch(err => {
+          console.error("Error fetching questions:", err);
+          alert("An error occurred while fetching questions.");
         });
     }
 
@@ -169,20 +219,33 @@
       if (!q) return endQuiz();
 
       document.getElementById('questionBox').innerText = `Q${currentQuestion + 1}: ${q.question}`;
-      document.getElementById('optionBox').innerHTML = "";
+      const optionBox = document.getElementById('optionBox');
+      optionBox.innerHTML = "";
 
       q.options.forEach((opt, idx) => {
+        const li = document.createElement('li');
         const btn = document.createElement('button');
         btn.innerText = opt;
-        btn.onclick = () => checkAnswer(idx);
-        const li = document.createElement('li');
+        btn.onclick = () => checkAnswer(idx, btn);
         li.appendChild(btn);
-        document.getElementById('optionBox').appendChild(li);
+        optionBox.appendChild(li);
       });
     }
 
-    function checkAnswer(selectedIndex) {
+    function checkAnswer(selectedIndex, buttonClicked) {
       const q = allQuestions[currentQuestion];
+      const buttons = document.querySelectorAll('#optionBox button');
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.correctIndex) {
+          btn.classList.add('correct-answer');
+        }
+        if (idx === selectedIndex && selectedIndex !== q.correctIndex) {
+          btn.classList.add('wrong-answer');
+        }
+      });
+
       if (selectedIndex === q.correctIndex) {
         score++;
       } else {
@@ -192,8 +255,11 @@
           correctAnswer: q.options[q.correctIndex]
         });
       }
-      currentQuestion++;
-      showQuestion();
+
+      setTimeout(() => {
+        currentQuestion++;
+        showQuestion();
+      }, 1500);
     }
 
     function startTimer() {
@@ -211,25 +277,44 @@
       document.getElementById('optionBox').innerHTML = "";
       document.getElementById('timer').innerText = "";
 
-      const email = localStorage.getItem('email') || prompt("Enter your email:");
+      const email = prompt("Enter your email:");
+
+      const scoreData = {
+        email,
+        score,
+        subject: selectedSubject,
+        total: allQuestions.length,
+        time: new Date().toLocaleString(),
+        wrongAnswers
+      };
 
       fetch('/api/submit-score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, score, wrongAnswers })
+        body: JSON.stringify(scoreData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = '/leaderboard.html';
+        } else {
+          alert("Failed to save score. Try again.");
+        }
+      })
+      .catch(err => {
+        console.error("Submission error:", err);
+        alert("An error occurred while submitting your score.");
       });
 
       document.getElementById('resultBox').innerText = `🎉 Quiz Over! Your Score: ${score}/${allQuestions.length}`;
-
-      if (wrongAnswers.length > 0) {
-        let wrongHtml = '<h3>Incorrect Answers:</h3><ul>';
-        wrongAnswers.forEach(item => {
-          wrongHtml += `<li><strong>Q:</strong> ${item.question}<br><strong>Your Answer:</strong> ${item.yourAnswer}<br><strong>Correct Answer:</strong> ${item.correctAnswer}</li>`;
-        });
-        wrongHtml += '</ul>';
-        document.getElementById('wrongBox').innerHTML = wrongHtml;
-      }
     }
+
+    function goToLeaderboard() {
+      window.location.href = '/leaderboard.html';
+    }
+
+    window.onload = fetchSubjects;
   </script>
+
 </body>
 </html>
