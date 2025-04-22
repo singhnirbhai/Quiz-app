@@ -1,29 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz App - Welcome</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
   <style>
-    body { font-family: Arial; text-align: center; margin-top: 100px; }
-    input { padding: 10px; margin: 5px; width: 200px; }
-    button { padding: 10px 20px; margin: 10px; }
+    /* Static Vertical Gradient Background with Peach and Pista Green */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ffcc99, #a8e6cf);
+    }
+
+    /* Container for Login Form */
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      transform: translateX(0);
+      animation: none;
+    }
+
+    /* Header Styling */
+    h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    /* Input Fields Styling */
+    input {
+      padding: 12px;
+      margin: 10px;
+      width: 250px;
+      border: 2px solid #a8e6cf;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 1rem;
+      color: #333; /* Ensure text color is visible */
+      transition: 0.3s ease;
+    }
+
+    /* Input Focus Effect */
+    input:focus {
+      border-color: #ffcc99;
+      outline: none;
+    }
+
+    /* Button Styling */
+    button {
+      padding: 12px 25px;
+      margin: 15px;
+      font-size: 1.1rem;
+      background-color: #a8e6cf;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    /* Button Hover Effect */
+    button:hover {
+      background-color: #ffcc99;
+      color: #000;
+    }
+
+    /* Register Link Styling */
+    .register-link {
+      margin-top: 20px;
+    }
+
+    .register-link button {
+      background-color: #a8e6cf;
+      color: #333;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .register-link button:hover {
+      background-color: #ffcc99;
+      color: #000;
+    }
   </style>
 </head>
 <body>
 
-  <h2>Welcome to the Quiz App</h2>
+  <div class="login-container">
+    <h2>Welcome to the Quiz App</h2>
 
-  <!-- Login Section -->
-  <div>
-    <input type="email" id="email" placeholder="Email" /><br>
-    <input type="password" id="password" placeholder="Password" /><br>
-    <button onclick="login()">Login</button>
-  </div>
+    <!-- Login Section -->
+    <div>
+      <input type="email" id="email" placeholder="Email" /><br />
+      <input type="password" id="password" placeholder="Password" /><br />
+      <button onclick="login()">Login</button>
+    </div>
 
-  <!-- Register Button -->
-  <div>
-    <p>New user? Register below</p>
-    <button onclick="window.location.href='register.html'">Go to Register Page</button>
+    <!-- Register Button -->
+    <div class="register-link">
+      <p>New user? Register below</p>
+      <button onclick="window.location.href='register.html'">Go to Register Page</button>
+    </div>
   </div>
 
   <script>
@@ -52,5 +145,6 @@
       }
     }
   </script>
+
 </body>
 </html>
