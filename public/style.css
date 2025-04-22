@@ -1,55 +1,78 @@
+/* Global styles */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f4f6f8;
+  background: linear-gradient(to right, #f4d1b2 50%, #a8d080 50%); /* Peach and Pista color gradient */
   color: #333;
   margin: 0;
   padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+/* Heading styles */
 h1, h2 {
   color: #2c3e50;
+  text-align: center;
+  font-weight: bold;
 }
 
+/* Container for content */
 .container {
   max-width: 800px;
-  margin: auto;
+  width: 100%;
   background: #fff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0.95; /* 50% transparent effect */
 }
 
+/* Button styles */
 button {
-  padding: 10px 20px;
-  background: #3498db;
-  color: #fff;
+  padding: 12px 24px;
+  background: #f8d7b9; /* Peach color */
+  color: #2c6e49; /* Pista green */
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
-  transition: background 0.3s;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
+  width: 100%; /* Make buttons full-width */
 }
 
 button:hover {
-  background: #2980b9;
+  background: #f1b43f; /* Lighter peach */
+  transform: scale(1.05); /* Slight scale effect */
 }
 
+button:active {
+  transform: scale(0.98); /* Button shrink effect */
+}
+
+/* Input and textarea styles */
 input, textarea, select {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
   font-size: 16px;
+  box-sizing: border-box; /* Ensure padding doesn't affect layout */
 }
 
+/* Option item styles */
 .option {
-  padding: 10px;
+  padding: 12px;
   margin: 5px 0;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
+  font-size: 16px;
 }
 
 .option:hover {
@@ -70,4 +93,67 @@ input, textarea, select {
   background-color: #d6eaf8;
   border-color: #3498db;
 }
+
+/* Center align the quiz container */
+.question-container {
+  position: relative; /* <-- add this */
+  margin-top: 30px;
+  background-color: #fffaf0;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #a8e6cf;
+}
+
+
+/* Layout for Subject List and Question Buttons */
+.subject-list-btn {
+  background-color: #7fbc8b; /* Pista Green */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subject-list-btn:hover {
+  background-color: #68a578;
+}
+
+#leaderboard-btn {
+  background-color: #f4d1b2; /* Peach */
+  color: #2c6e49;           /* Pista Text */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#leaderboard-btn:hover {
+  background-color: #f1b087; /* Slightly deeper peach */
+  transform: translateY(-2px);
+}
+
+.timer {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #d32f2f;
+  background: #fff8e1;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 
