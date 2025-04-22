@@ -3,36 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>Leaderboard</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1 { margin-bottom: 20px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-    th { background-color: #f2f2f2; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffcc99, #a8e6cf); /* Peach to Pista */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 90%;
+      max-width: 800px;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    th {
+      background-color: #fbe9e7;
+      color: #2c3e50;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f8e9;
+    }
+
+    tr:hover {
+      background-color: #ffe0b2;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-  <!-- your content here -->
-</div>
-	
+
   <h1>Leaderboard</h1>
   <table>
     <thead>
       <tr>
         <th>Email</th>
-        <th>Subject</th>
         <th>Score</th>
-        <th>Total</th>
-        <th>Time</th>
       </tr>
     </thead>
     <tbody id="score-table"></tbody>
   </table>
 
   <script>
-    fetch('/api/scores')
+    fetch('/api/scoreboard')
       .then(res => res.json())
       .then(scores => {
         const table = document.getElementById("score-table");
@@ -40,15 +74,12 @@
           const row = document.createElement("tr");
           row.innerHTML = `
             <td>${score.email}</td>
-            <td>${score.subject}</td>
             <td>${score.score}</td>
-            <td>${score.total}</td>
-            <td>${score.time}</td>
           `;
           table.appendChild(row);
         });
       });
   </script>
+
 </body>
 </html>
-<!DOCTYPE html>
