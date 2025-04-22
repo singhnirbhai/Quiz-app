@@ -1,69 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Register</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Quiz App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
   <style>
+    /* Static Vertical Gradient Background */
     body {
       font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #ffcc99, #a8e6cf); /* Peach to Pista */
+    }
+
+    .register-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       text-align: center;
-      margin-top: 100px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #2c3e50;
     }
 
     input {
-      padding: 10px;
-      margin: 5px;
-      width: 220px;
+      padding: 12px;
+      margin: 10px 0;
+      width: 250px;
+      border: 2px solid #a8e6cf;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #333;
+      background-color: #fff;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #ffcc99;
+      outline: none;
     }
 
     button {
-      padding: 10px 20px;
-      margin-top: 10px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      background-color: #a8e6cf;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s ease;
     }
 
-    #message {
-      margin-top: 15px;
-      font-weight: bold;
+    button:hover {
+      background-color: #ffcc99;
+      color: #000;
     }
   </style>
 </head>
 <body>
-  <h2>User Registration</h2>
 
-  <input type="email" id="email" placeholder="Email" required><br>
-  <input type="password" id="password" placeholder="Password" required><br>
-
-  <button onclick="register()">Register</button>
-  <p id="message"></p>
+  <div class="register-container">
+    <h2>Create a New Account</h2>
+    <input type="text" id="name" placeholder="Full Name" /><br />
+    <input type="email" id="email" placeholder="Email" /><br />
+    <input type="password" id="password" placeholder="Password" /><br />
+    <button onclick="register()">Register</button>
+  </div>
 
   <script>
-    function register() {
+    async function register() {
+      const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      if (!email || !password) {
-        document.getElementById("message").textContent = "Please fill all fields.";
-        return;
-      }
-
-      fetch('/api/register', {
+      const res = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }) // 👈 only send email & password
-      })
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("message").textContent = data.message;
-        if (data.success) {
-          setTimeout(() => window.location.href = "index.html", 1500); // Redirect to login
-        }
-      })
-      .catch(err => {
-        document.getElementById("message").textContent = "Registration failed.";
-        console.error("Registration error:", err);
+        body: JSON.stringify({ name, email, password })
       });
+
+      const data = await res.json();
+      if (data.success) {
+        alert("Registration successful! You can now log in.");
+        window.location.href = "index.html";
+      } else {
+        alert("Registration failed. Try again.");
+      }
     }
   </script>
+
 </body>
 </html>
