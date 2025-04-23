@@ -156,7 +156,7 @@
     let score = 0;
     let wrongAnswers = [];
     let timerInterval;
-    let timeLeft = 30;
+    let timeLeft = 600;
     let selectedSubject = "";
 
     function fetchSubjects() {
@@ -201,7 +201,7 @@
           currentQuestion = 0;
           score = 0;
           wrongAnswers = [];
-          timeLeft = 30;
+          timeLeft = 600;
 
           document.querySelector('.start-btn').style.display = 'none';
           document.querySelector('.question-container').style.display = 'block';
