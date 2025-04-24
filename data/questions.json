@@ -1,1 +1,484 @@
-[]
+[
+  
+    {
+        "id": 1,
+        "subject": "Linux",
+        "question": "Who is considered the father of Linux?",
+        "options": [
+            "Richard Stallman",
+            "Bill Gates",
+            "Linus Torvalds",
+            "Steve Jobs"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 2,
+        "subject": "Linux",
+        "question": "Linux is based on which operating system?",
+        "options": [
+            "DOS",
+            "UNIX",
+            "Windows",
+            "MacOS"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 3,
+        "subject": "Linux",
+        "question": "What is the kernel in Linux?",
+        "options": [
+            "A text editor",
+            "The graphical interface",
+            "The core of the OS",
+            "A type of command"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 4,
+        "subject": "Linux",
+        "question": "Which of the following is a Linux distribution?",
+        "options": [
+            "Ubuntu",
+            "Windows 10",
+            "macOS",
+            "Android"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 5,
+        "subject": "Linux",
+        "question": "Linux is released under which license?",
+        "options": [
+            "MIT",
+            "GPL",
+            "Apache",
+            "BSD"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 6,
+        "subject": "Linux",
+        "question": "Which year was Linux first released?",
+        "options": [
+            "1991",
+            "1989",
+            "1995",
+            "2000"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 7,
+        "subject": "Linux",
+        "question": "Which of these is a package manager for Debian-based systems?",
+        "options": [
+            "yum",
+            "apt",
+            "rpm",
+            "dnf"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 8,
+        "subject": "Linux",
+        "question": "What does open-source mean in context of Linux?",
+        "options": [
+            "Free to use",
+            "Free to modify",
+            "Code is available",
+            "All of the above"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 9,
+        "subject": "Linux",
+        "question": "What is a Type 1 hypervisor?",
+        "options": [
+            "Runs on bare metal",
+            "Runs inside an OS",
+            "Only for Windows",
+            "For BIOS setup"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 10,
+        "subject": "Linux",
+        "question": "What is a Type 2 hypervisor?",
+        "options": [
+            "Runs on top of a host OS",
+            "Runs on bare metal",
+            "Embedded in firmware",
+            "None of the above"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 11,
+        "subject": "Linux",
+        "question": "Which of these is a Type 1 hypervisor?",
+        "options": [
+            "VirtualBox",
+            "VMware Workstation",
+            "KVM",
+            "QEMU"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 12,
+        "subject": "Linux",
+        "question": "Which hypervisor is integrated into the Linux kernel?",
+        "options": [
+            "Xen",
+            "VMware",
+            "KVM",
+            "Hyper-V"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 13,
+        "subject": "Linux",
+        "question": "What is the role of a hypervisor?",
+        "options": [
+            "Create files",
+            "Manage virtual machines",
+            "Compile code",
+            "Edit documents"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 14,
+        "subject": "Linux",
+        "question": "Which command starts a KVM virtual machine?",
+        "options": [
+            "kvm",
+            "qemu",
+            "virsh start",
+            "vboxmanage"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 15,
+        "subject": "Linux",
+        "question": "What is stored in the /etc directory?",
+        "options": [
+            "User files",
+            "System configuration files",
+            "Kernel files",
+            "Boot files"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 16,
+        "subject": "Linux",
+        "question": "Which directory contains user home directories?",
+        "options": [
+            "/usr",
+            "/etc",
+            "/home",
+            "/opt"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 17,
+        "subject": "Linux",
+        "question": "Where are system binaries stored?",
+        "options": [
+            "/usr/bin",
+            "/sbin",
+            "/bin",
+            "All of the above"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 18,
+        "subject": "Linux",
+        "question": "Which directory is mounted first during boot?",
+        "options": [
+            "/home",
+            "/var",
+            "/",
+            "/tmp"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 19,
+        "subject": "Linux",
+        "question": "What is stored in /var/log?",
+        "options": [
+            "Logs",
+            "Libraries",
+            "Binaries",
+            "Configuration files"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 20,
+        "subject": "Linux",
+        "question": "Which directory contains temporary files?",
+        "options": [
+            "/opt",
+            "/tmp",
+            "/etc",
+            "/bin"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 21,
+        "subject": "Linux",
+        "question": "Where are device files located?",
+        "options": [
+            "/dev",
+            "/etc/dev",
+            "/sys",
+            "/proc/devices"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 22,
+        "subject": "Linux",
+        "question": "What is the purpose of /boot?",
+        "options": [
+            "Holds bootloader files",
+            "User programs",
+            "System logs",
+            "Device drivers"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 23,
+        "subject": "Linux",
+        "question": "Which command is used to display the current working directory?",
+        "options": [
+            "pwd",
+            "ls",
+            "cd",
+            "echo"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 24,
+        "subject": "Linux",
+        "question": "Which command lists directory contents?",
+        "options": [
+            "ls",
+            "cd",
+            "rm",
+            "mkdir"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 25,
+        "subject": "Linux",
+        "question": "Which command is used to remove a file?",
+        "options": [
+            "del",
+            "erase",
+            "rm",
+            "delete"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 26,
+        "subject": "Linux",
+        "question": "Which command is used to change the current directory?",
+        "options": [
+            "cd",
+            "pwd",
+            "mv",
+            "cp"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 27,
+        "subject": "Linux",
+        "question": "Which command is used to copy files?",
+        "options": [
+            "cp",
+            "mv",
+            "copy",
+            "scp"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 28,
+        "subject": "Linux",
+        "question": "Which command is used to move or rename files?",
+        "options": [
+            "cp",
+            "mv",
+            "rm",
+            "rename"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 29,
+        "subject": "Linux",
+        "question": "Which command is used to create a new directory?",
+        "options": [
+            "mkdir",
+            "newdir",
+            "makedir",
+            "dircreate"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 30,
+        "subject": "Linux",
+        "question": "Which command shows manual pages?",
+        "options": [
+            "man",
+            "help",
+            "info",
+            "doc"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 31,
+        "subject": "Linux",
+        "question": "Which command is used to display the contents of a file?",
+        "options": [
+            "cat",
+            "see",
+            "ls",
+            "edit"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 32,
+        "subject": "Linux",
+        "question": "Which command shows the current user?",
+        "options": [
+            "whoami",
+            "me",
+            "user",
+            "login"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 33,
+        "subject": "Linux",
+        "question": "What is a hard link?",
+        "options": [
+            "A copy of the file",
+            "A reference to file's inode",
+            "A file shortcut",
+            "A symbolic path"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 34,
+        "subject": "Linux",
+        "question": "What is a soft link?",
+        "options": [
+            "A pointer to a file",
+            "A backup file",
+            "A hidden file",
+            "An executable file"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 35,
+        "subject": "Linux",
+        "question": "Which command is used to create a hard link?",
+        "options": [
+            "ln",
+            "ln -s",
+            "link -s",
+            "mklink"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 36,
+        "subject": "Linux",
+        "question": "Which command is used to create a soft link?",
+        "options": [
+            "ln",
+            "ln -s",
+            "link",
+            "symlink"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 37,
+        "subject": "Linux",
+        "question": "Can a soft link point to a directory?",
+        "options": [
+            "Yes",
+            "No",
+            "Only in root",
+            "Only with sudo"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 38,
+        "subject": "Linux",
+        "question": "What happens if the original file of a soft link is deleted?",
+        "options": [
+            "Link becomes broken",
+            "Link becomes hard link",
+            "Nothing",
+            "Link auto-corrects"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 39,
+        "subject": "Linux",
+        "question": "What does `ls -l` show for soft links?",
+        "options": [
+            "\u2192 pointing file",
+            "File size only",
+            "Nothing",
+            "Creation time"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 40,
+        "subject": "Linux",
+        "question": "Can hard links span across file systems?",
+        "options": [
+            "Yes",
+            "No",
+            "Only with root",
+            "Only if symlinked"
+        ],
+        "correctIndex": 1
+    }
+
+]
