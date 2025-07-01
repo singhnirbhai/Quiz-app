@@ -1,205 +1,203 @@
-[
-  
-    {
+{
         "id": 1,
         "subject": "Linux",
-        "question": "Who is considered the father of Linux?",
+        "question": "Which of the following commands is used to display the current runlevel of a Linux \nsystem?",
         "options": [
-            "Richard Stallman",
-            "Bill Gates",
-            "Linus Torvalds",
-            "Steve Jobs"
-        ],
-        "correctIndex": 2
-    },
-    {
-        "id": 2,
-        "subject": "Linux",
-        "question": "Linux is based on which operating system?",
-        "options": [
-            "DOS",
-            "UNIX",
-            "Windows",
-            "MacOS"
-        ],
-        "correctIndex": 1
-    },
-    {
-        "id": 3,
-        "subject": "Linux",
-        "question": "What is the kernel in Linux?",
-        "options": [
-            "A text editor",
-            "The graphical interface",
-            "The core of the OS",
-            "A type of command"
-        ],
-        "correctIndex": 2
-    },
-    {
-        "id": 4,
-        "subject": "Linux",
-        "question": "Which of the following is a Linux distribution?",
-        "options": [
-            "Ubuntu",
-            "Windows 10",
-            "macOS",
-            "Android"
+            "runlevel",
+            "level",
+            "whoami",
+            "systemctl"
         ],
         "correctIndex": 0
     },
     {
+        "id": 2,
+        "subject": "Linux",
+        "question": "What does the chmod 755 command do?",
+        "options": [
+            "Gives read/write to owner only",
+            "Gives full access to everyone",
+            "Gives full access to owner, and read/execute to others",
+            "Denies all access"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 3,
+        "subject": "Linux",
+        "question": "Which file contains the user password aging information on most Linux systems?",
+        "options": [
+            "/etc/passwd",
+            "/etc/group",
+            "/etc/login.defs",
+            "/etc/shadow"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 4,
+        "subject": "Linux",
+        "question": "Which command is used to safely edit the sudoers file?",
+        "options": [
+            "nano /etc/sudoers",
+            "sudoedit",
+            "visudo",
+            "vim /etc/sudoers"
+        ],
+        "correctIndex": 2
+    },
+    {
         "id": 5,
         "subject": "Linux",
-        "question": "Linux is released under which license?",
+        "question": "Which of the following commands can display the UUID of a disk partition?",
         "options": [
-            "MIT",
-            "GPL",
-            "Apache",
-            "BSD"
+            "mount",
+            "blkid",
+            "fdisk",
+            "lsblk"
         ],
         "correctIndex": 1
     },
     {
         "id": 6,
         "subject": "Linux",
-        "question": "Which year was Linux first released?",
+        "question": "What does the useradd -m command do?",
         "options": [
-            "1991",
-            "1989",
-            "1995",
-            "2000"
-        ],
-        "correctIndex": 0
-    },
-    {
-        "id": 7,
-        "subject": "Linux",
-        "question": "Which of these is a package manager for Debian-based systems?",
-        "options": [
-            "yum",
-            "apt",
-            "rpm",
-            "dnf"
+            "Adds a user without a home directory",
+            "Adds a user and creates a home directory",
+            "Adds a user and assigns sudo",
+            "Adds a user to /etc/shadow"
         ],
         "correctIndex": 1
     },
     {
+        "id": 7,
+        "subject": "Linux",
+        "question": "Which file system supports journaling and is commonly used in modern Linux \ndistributions?",
+        "options": [
+            "FAT32",
+            "ext2",
+            "ext4",
+            "ISO9660"
+        ],
+        "correctIndex": 2
+    },
+    {
         "id": 8,
         "subject": "Linux",
-        "question": "What does open-source mean in context of Linux?",
+        "question": "Which command will show all currently loaded kernel modules?",
         "options": [
-            "Free to use",
-            "Free to modify",
-            "Code is available",
-            "All of the above"
+            "lsmod",
+            "modprobe",
+            "dmesg",
+            "uname -a"
         ],
-        "correctIndex": 3
+        "correctIndex": 0
     },
     {
         "id": 9,
         "subject": "Linux",
-        "question": "What is a Type 1 hypervisor?",
+        "question": "Which command can display memory usage in a human-readable format?",
         "options": [
-            "Runs on bare metal",
-            "Runs inside an OS",
-            "Only for Windows",
-            "For BIOS setup"
+            "free -h",
+            "top",
+            "vmstat",
+            "meminfo"
         ],
         "correctIndex": 0
     },
     {
         "id": 10,
         "subject": "Linux",
-        "question": "What is a Type 2 hypervisor?",
+        "question": "Which of the following commands will display active network connections and listening \nports?",
         "options": [
-            "Runs on top of a host OS",
-            "Runs on bare metal",
-            "Embedded in firmware",
-            "None of the above"
+            "netstat -lntu",
+            "ping -a",
+            "ss -a",
+            "dig +tcp"
         ],
         "correctIndex": 0
     },
     {
         "id": 11,
         "subject": "Linux",
-        "question": "Which of these is a Type 1 hypervisor?",
+        "question": "Which of the following commands is used to modify a user's password expiration \npolicy?",
         "options": [
-            "VirtualBox",
-            "VMware Workstation",
-            "KVM",
-            "QEMU"
+            "usermod",
+            "passwd -e",
+            "chage",
+            "shadowedit"
         ],
         "correctIndex": 2
     },
     {
         "id": 12,
         "subject": "Linux",
-        "question": "Which hypervisor is integrated into the Linux kernel?",
+        "question": "What is the purpose of the /etc/fstab file?",
         "options": [
-            "Xen",
-            "VMware",
-            "KVM",
-            "Hyper-V"
+            "Manages DNS name resolution",
+            "Stores startup services",
+            "Lists user password settings",
+            "Configures mount points for filesystems"
         ],
-        "correctIndex": 2
+        "correctIndex": 3
     },
     {
         "id": 13,
         "subject": "Linux",
-        "question": "What is the role of a hypervisor?",
+        "question": "Which command allows you to view the last system boot messages from the kernel ring \nbuffer?",
         "options": [
-            "Create files",
-            "Manage virtual machines",
-            "Compile code",
-            "Edit documents"
+            "dmesg",
+            "journalctl",
+            "syslog",
+            "uptime"
         ],
-        "correctIndex": 1
+        "correctIndex": 0
     },
     {
         "id": 14,
         "subject": "Linux",
-        "question": "Which command starts a KVM virtual machine?",
+        "question": "What is the result of the following command: grep \"^root\" /etc/passwd?",
         "options": [
-            "kvm",
-            "qemu",
-            "virsh start",
-            "vboxmanage"
-        ],
-        "correctIndex": 2
-    },
-    {
-        "id": 15,
-        "subject": "Linux",
-        "question": "What is stored in the /etc directory?",
-        "options": [
-            "User files",
-            "System configuration files",
-            "Kernel files",
-            "Boot files"
+            "Finds all users with root privileges",
+            "Searches for any user whose name starts with \"root\"",
+            "Shows every user account",
+            "Locates password hashes for root"
         ],
         "correctIndex": 1
     },
     {
+        "id": 15,
+        "subject": "Linux",
+        "question": "Which of the following commands will show information about LVM logical volumes?",
+        "options": [
+            "lvscan",
+            "fdisk -l \n \n \n \n \n8 8 \n\u00a9 2025 \u00b7 Curated by Artem Polynko \u00b7 Follow on LinkedIn  \nLatest Guide Versions: https://linkedin.com/in/Artem-Polynko \nBased on personal research and insights \u00b7 Feel free to share with friends \u00b7 Not for resale \nVersion 1.0",
+            "mkfs.ext4",
+            "mount -a"
+        ],
+        "correctIndex": 0
+    },
+    {
         "id": 16,
         "subject": "Linux",
-        "question": "Which directory contains user home directories?",
+        "question": "What is the main role of the systemd init system?",
         "options": [
-            "/usr",
-            "/etc",
-            "/home",
-            "/opt"
+            "Disk partitioning",
+            "Boot loader management",
+            "Service and process management",
+            "GUI configuration"
         ],
         "correctIndex": 2
     },
     {
         "id": 17,
         "subject": "Linux",
-        "question": "Where are system binaries stored?",
+        "question": "Which file contains user-defined environment variables for Bash shell sessions?",
         "options": [
-            "/usr/bin",
-            "/sbin",
-            "/bin",
+            "/etc/environment",
+            "~/.bashrc",
+            "~/.profile",
             "All of the above"
         ],
         "correctIndex": 3
@@ -207,277 +205,997 @@
     {
         "id": 18,
         "subject": "Linux",
-        "question": "Which directory is mounted first during boot?",
+        "question": "Which tool is best for capturing live network traffic on a Linux server?",
         "options": [
-            "/home",
-            "/var",
-            "/",
-            "/tmp"
+            "netstat",
+            "ping",
+            "tcpdump",
+            "ss"
         ],
         "correctIndex": 2
     },
     {
         "id": 19,
         "subject": "Linux",
-        "question": "What is stored in /var/log?",
+        "question": "Which of the following commands is used to install a .deb package manually?",
         "options": [
-            "Logs",
-            "Libraries",
-            "Binaries",
-            "Configuration files"
+            "yum install",
+            "apt-get build",
+            "dpkg -i",
+            "rpm -ivh"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
     },
     {
         "id": 20,
         "subject": "Linux",
-        "question": "Which directory contains temporary files?",
+        "question": "Which RAID level uses mirroring to provide redundancy?",
         "options": [
-            "/opt",
-            "/tmp",
-            "/etc",
-            "/bin"
+            "RAID 0",
+            "RAID 1",
+            "RAID 5",
+            "RAID 6"
         ],
         "correctIndex": 1
     },
     {
         "id": 21,
         "subject": "Linux",
-        "question": "Where are device files located?",
+        "question": "Which command would you use to determine which ports a service is actively listening \non?",
         "options": [
-            "/dev",
-            "/etc/dev",
-            "/sys",
-            "/proc/devices"
+            "netstat -tulpn",
+            "nmap localhost",
+            "ping -p",
+            "dig"
         ],
         "correctIndex": 0
     },
     {
         "id": 22,
         "subject": "Linux",
-        "question": "What is the purpose of /boot?",
+        "question": "Which shell feature allows the use of | to send the output of one command to another?",
         "options": [
-            "Holds bootloader files",
-            "User programs",
-            "System logs",
-            "Device drivers"
+            "Wildcards",
+            "Pipes",
+            "Globbing",
+            "Variables"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
     },
     {
         "id": 23,
         "subject": "Linux",
-        "question": "Which command is used to display the current working directory?",
+        "question": "What is the purpose of cron in Linux systems?",
         "options": [
-            "pwd",
-            "ls",
-            "cd",
-            "echo"
+            "Monitor processes",
+            "Schedule repetitive tasks",
+            "Track user logins",
+            "Compress backups"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
     },
     {
         "id": 24,
         "subject": "Linux",
-        "question": "Which command lists directory contents?",
+        "question": "What does the umask command control?",
         "options": [
-            "ls",
-            "cd",
-            "rm",
-            "mkdir"
+            "Active shell",
+            "Default permission bits for new files/directories",
+            "Encrypted file systems",
+            "Disk quota"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
     },
     {
         "id": 25,
         "subject": "Linux",
-        "question": "Which command is used to remove a file?",
+        "question": "You need to allow a web server to listen on port 80 using firewalld. What command \nshould you run?",
         "options": [
-            "del",
-            "erase",
-            "rm",
-            "delete"
+            "ufw allow http",
+            "firewall-cmd --add-service=http --permanent \n \n \n \n \n12 \n12 \n\u00a9 2025 \u00b7 Curated by Artem Polynko \u00b7 Follow on LinkedIn  \nLatest Guide Versions: https://linkedin.com/in/Artem-Polynko \nBased on personal research and insights \u00b7 Feel free to share with friends \u00b7 Not for resale \nVersion 1.0",
+            "iptables -A INPUT -p tcp --dport 443 -j ACCEPT",
+            "firewalld enable httpd"
         ],
-        "correctIndex": 2
+        "correctIndex": 1
     },
     {
         "id": 26,
         "subject": "Linux",
-        "question": "Which command is used to change the current directory?",
+        "question": "Which of the following describes a symbolic link?",
         "options": [
-            "cd",
-            "pwd",
-            "mv",
-            "cp"
+            "A file copy",
+            "A filesystem snapshot",
+            "A reference that points to another file",
+            "A compressed version of a file"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
     },
     {
         "id": 27,
         "subject": "Linux",
-        "question": "Which command is used to copy files?",
+        "question": "What is the function of the awk command in Linux?",
         "options": [
-            "cp",
-            "mv",
-            "copy",
-            "scp"
+            "Encrypt data",
+            "Compile software",
+            "Format and extract fields from text",
+            "List open files"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
     },
     {
         "id": 28,
         "subject": "Linux",
-        "question": "Which command is used to move or rename files?",
+        "question": "Which of the following is true about sudo?",
         "options": [
-            "cp",
-            "mv",
-            "rm",
-            "rename"
+            "Allows any user to run anything",
+            "Grants limited administrative privileges",
+            "Requires a reboot to activate",
+            "Only works with GUI applications"
         ],
         "correctIndex": 1
     },
     {
         "id": 29,
         "subject": "Linux",
-        "question": "Which command is used to create a new directory?",
+        "question": "What is stored in the /var/log directory?",
         "options": [
-            "mkdir",
-            "newdir",
-            "makedir",
-            "dircreate"
+            "Kernel modules",
+            "User home directories",
+            "System logs",
+            "Installed packages"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
     },
     {
         "id": 30,
         "subject": "Linux",
-        "question": "Which command shows manual pages?",
+        "question": "Which command will search recursively for the string \"error\" in all .log files under \n/var/log?",
         "options": [
-            "man",
-            "help",
-            "info",
-            "doc"
+            "grep error /var/log/*.log",
+            "grep -r error /var/log/*.log \n \n \n \n \n13 \n13 \n\u00a9 2025 \u00b7 Curated by Artem Polynko \u00b7 Follow on LinkedIn  \nLatest Guide Versions: https://linkedin.com/in/Artem-Polynko \nBased on personal research and insights \u00b7 Feel free to share with friends \u00b7 Not for resale \nVersion 1.0",
+            "find /var/log -name \"*.log\" | grep error",
+            "grep -r \"error\" /var/log"
         ],
-        "correctIndex": 0
+        "correctIndex": 3
     },
     {
         "id": 31,
         "subject": "Linux",
-        "question": "Which command is used to display the contents of a file?",
+        "question": "What is the purpose of the tar command in Linux?",
         "options": [
-            "cat",
-            "see",
-            "ls",
-            "edit"
+            "Extract data from databases",
+            "Monitor services",
+            "Archive and compress files",
+            "Encrypt files"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
     },
     {
         "id": 32,
         "subject": "Linux",
-        "question": "Which command shows the current user?",
+        "question": "Which directory contains configuration files for installed services and the system?",
         "options": [
-            "whoami",
-            "me",
-            "user",
-            "login"
+            "/var",
+            "/etc",
+            "/opt",
+            "/tmp"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
     },
     {
         "id": 33,
         "subject": "Linux",
-        "question": "What is a hard link?",
+        "question": "Which command is used to check and repair Linux filesystems?",
         "options": [
-            "A copy of the file",
-            "A reference to file's inode",
-            "A file shortcut",
-            "A symbolic path"
+            "fdisk",
+            "e2fsck",
+            "mkfs",
+            "mount"
         ],
         "correctIndex": 1
     },
     {
         "id": 34,
         "subject": "Linux",
-        "question": "What is a soft link?",
+        "question": "What command is used to build a custom kernel module into a running system?",
         "options": [
-            "A pointer to a file",
-            "A backup file",
-            "A hidden file",
-            "An executable file"
+            "insmod",
+            "lsmod",
+            "modinfo",
+            "rmmod"
         ],
         "correctIndex": 0
     },
     {
         "id": 35,
         "subject": "Linux",
-        "question": "Which command is used to create a hard link?",
+        "question": "What does the df -h command display?",
         "options": [
-            "ln",
-            "ln -s",
-            "link -s",
-            "mklink"
+            "Memory usage",
+            "File ownership",
+            "Human-readable disk usage by mount point",
+            "Inode count"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
     },
     {
         "id": 36,
         "subject": "Linux",
-        "question": "Which command is used to create a soft link?",
+        "question": "Which log file typically records failed login attempts and authentication issues?",
         "options": [
-            "ln",
-            "ln -s",
-            "link",
-            "symlink"
+            "/var/log/messages",
+            "/var/log/dmesg",
+            "/var/log/auth.log",
+            "/etc/passwd"
         ],
-        "correctIndex": 1
+        "correctIndex": 2
     },
     {
         "id": 37,
         "subject": "Linux",
-        "question": "Can a soft link point to a directory?",
+        "question": "What is the effect of running chmod 700 script.sh?",
         "options": [
-            "Yes",
-            "No",
-            "Only in root",
-            "Only with sudo"
+            "Only the owner can read, write, and execute the file",
+            "Everyone can execute the file",
+            "Group and others can read but not execute",
+            "The file becomes hidden"
         ],
         "correctIndex": 0
     },
     {
         "id": 38,
         "subject": "Linux",
-        "question": "What happens if the original file of a soft link is deleted?",
+        "question": "Which option would you use with grep to ignore case sensitivity when searching?",
         "options": [
-            "Link becomes broken",
-            "Link becomes hard link",
-            "Nothing",
-            "Link auto-corrects"
+            "-v",
+            "-n",
+            "-i",
+            "-r"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
     },
     {
         "id": 39,
         "subject": "Linux",
-        "question": "What does `ls -l` show for soft links?",
+        "question": "What is the purpose of the cut command?",
         "options": [
-            "\u2192 pointing file",
-            "File size only",
-            "Nothing",
-            "Creation time"
+            "Edit large files",
+            "Select and extract fields from lines of input",
+            "Remove lines",
+            "Sort lines alphabetically"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
     },
     {
         "id": 40,
         "subject": "Linux",
-        "question": "Can hard links span across file systems?",
+        "question": "Which command is used to update the list of available packages on a Debian-based \nsystem?",
         "options": [
-            "Yes",
-            "No",
-            "Only with root",
-            "Only if symlinked"
+            "apt upgrade",
+            "apt install",
+            "apt update",
+            "dpkg -l"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 41,
+        "subject": "Linux",
+        "question": "What is the default shell for most Linux distributions?",
+        "options": [
+            "csh",
+            "fish",
+            "bash",
+            "zsh"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 42,
+        "subject": "Linux",
+        "question": "Which command will recursively change ownership of a directory and all its contents?",
+        "options": [
+            "chmod -R",
+            "chown -R",
+            "usermod -R",
+            "setfacl -m"
         ],
         "correctIndex": 1
+    },
+    {
+        "id": 43,
+        "subject": "Linux",
+        "question": "Which system file defines static hostname configuration in most Linux distributions?",
+        "options": [
+            "/etc/network/interfaces",
+            "/etc/hostname",
+            "/etc/hosts",
+            "/etc/resolv.conf"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 44,
+        "subject": "Linux",
+        "question": "Which option for the ps command displays all processes in full detail across users?",
+        "options": [
+            "ps aux",
+            "ps -p",
+            "ps -e",
+            "ps u"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 45,
+        "subject": "Linux",
+        "question": "Which command displays real-time CPU usage, load average, and running processes?",
+        "options": [
+            "htop",
+            "ps",
+            "who",
+            "kill"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 46,
+        "subject": "Linux",
+        "question": "What is the default location for a non-root user's crontab?",
+        "options": [
+            "/etc/crontab",
+            "/etc/cron.d/user",
+            "/var/spool/cron/username",
+            "~/.crontab"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 47,
+        "subject": "Linux",
+        "question": "Which of the following files is used to define a persistent static IP address on systems \nusing Netplan?",
+        "options": [
+            "/etc/network/interfaces",
+            "/etc/netplan/config.yaml",
+            "/etc/systemd/networkd.conf",
+            "/etc/dhcp/dhclient.conf"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 48,
+        "subject": "Linux",
+        "question": "What will the echo $? command display?",
+        "options": [
+            "Last background process PID",
+            "The current shell level",
+            "The return code of the last executed command",
+            "The value of the last positional parameter"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 49,
+        "subject": "Linux",
+        "question": "What does the tee command do?",
+        "options": [
+            "Compresses input to a file",
+            "Writes output to a file and to stdout simultaneously",
+            "Removes duplicate lines",
+            "Displays a tree view of the file system"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 50,
+        "subject": "Linux",
+        "question": "Which file controls global environment variables set at login for all users?",
+        "options": [
+            "/etc/profile",
+            "~/.bash_profile",
+            "~/.bashrc",
+            "/etc/passwd"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 51,
+        "subject": "Linux",
+        "question": "Which command will list all available services and their statuses on a systemd-based \nsystem?",
+        "options": [
+            "service --list",
+            "systemctl list-units --type=service",
+            "chkconfig --list",
+            "initctl list"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 52,
+        "subject": "Linux",
+        "question": "Which file defines the primary DNS server for name resolution on a Linux system?",
+        "options": [
+            "/etc/hostname",
+            "/etc/hosts",
+            "/etc/nsswitch.conf",
+            "/etc/resolv.conf"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 53,
+        "subject": "Linux",
+        "question": "Which of the following commands would display the kernel version?",
+        "options": [
+            "uname -a",
+            "dmesg | head",
+            "uptime",
+            "ls /boot"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 54,
+        "subject": "Linux",
+        "question": "Which of the following is a journaling file system?",
+        "options": [
+            "ext2",
+            "ext4",
+            "FAT32",
+            "ISO9660"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 55,
+        "subject": "Linux",
+        "question": "What is the primary function of the modprobe command?",
+        "options": [
+            "Remove memory modules",
+            "Rebuild the GRUB config",
+            "Load kernel modules with dependencies",
+            "Display system logs"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 56,
+        "subject": "Linux",
+        "question": "What does the history command do?",
+        "options": [
+            "Displays past file modifications",
+            "Shows bash command history",
+            "Tracks login events",
+            "Audits kernel changes"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 57,
+        "subject": "Linux",
+        "question": "What option with the ls command displays file sizes in human-readable format?",
+        "options": [
+            "-a",
+            "-s",
+            "-h",
+            "-r"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 58,
+        "subject": "Linux",
+        "question": "Which command is used to create a new logical volume in LVM?",
+        "options": [
+            "mkfs",
+            "lvcreate",
+            "vgcreate",
+            "pvcreate"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 59,
+        "subject": "Linux",
+        "question": "What does the /etc/ssh/sshd_config file configure?",
+        "options": [
+            "SSH client behavior",
+            "SSH server settings",
+            "Firewall rules for port 22",
+            "Public key encryption settings"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 60,
+        "subject": "Linux",
+        "question": "Which environment variable contains the list of directories the shell searches for \nexecutables?",
+        "options": [
+            "USER",
+            "SHELL",
+            "HOME",
+            "PATH"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 61,
+        "subject": "Linux",
+        "question": "Which command is used to display the current disk I/O statistics?",
+        "options": [
+            "uptime",
+            "vmstat",
+            "iostat",
+            "dstat"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 62,
+        "subject": "Linux",
+        "question": "What does the cut -d ':' -f1 /etc/passwd command do?",
+        "options": [
+            "Counts users",
+            "Displays all full lines",
+            "Lists only usernames",
+            "Lists only passwords"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 63,
+        "subject": "Linux",
+        "question": "Which of the following commands will archive a directory and compress it with gzip?",
+        "options": [
+            "tar -czf archive.tar.gz /dir",
+            "gzip /dir",
+            "zip /dir",
+            "tar -xzf archive.tar.gz"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 64,
+        "subject": "Linux",
+        "question": "Which command shows who is currently logged into the system?",
+        "options": [
+            "whoami",
+            "who",
+            "usershow",
+            "id"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 65,
+        "subject": "Linux",
+        "question": "What is the purpose of the /etc/nsswitch.conf file?",
+        "options": [
+            "Maps user to home directories",
+            "Defines order of name resolution methods",
+            "Configures sudo access",
+            "Mounts remote file systems"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 66,
+        "subject": "Linux",
+        "question": "Which of the following best describes the function of a sticky bit on a directory?",
+        "options": [
+            "Prevents deletion of any files",
+            "Allows users to modify group files",
+            "Only the file owner can delete their files",
+            "Makes files read-only"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 67,
+        "subject": "Linux",
+        "question": "How would you list the last 20 lines of a system log file?",
+        "options": [
+            "logtail -n 20",
+            "tail -n 20 /var/log/syslog",
+            "view /var/log/syslog 20",
+            "less /var/log/syslog -n 20"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 68,
+        "subject": "Linux",
+        "question": "Which command will recursively find files with .conf extension in /etc?",
+        "options": [
+            "find /etc -name \"*.conf\"",
+            "grep -r \"*.conf\" /etc",
+            "locate /etc/*.conf",
+            "ls /etc/*.conf -R"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 69,
+        "subject": "Linux",
+        "question": "Which Linux command would be used to examine and filter packet traffic on a specific \nnetwork interface?",
+        "options": [
+            "nmap",
+            "tcpdump",
+            "dig",
+            "traceroute"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 70,
+        "subject": "Linux",
+        "question": "What does the lsof command do?",
+        "options": [
+            "Lists open files and the processes using them",
+            "Opens file editors",
+            "Formats logs",
+            "Mounts file systems"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 71,
+        "subject": "Linux",
+        "question": "What is the purpose of the mount command in Linux?",
+        "options": [
+            "Format disk partitions",
+            "Scan for devices",
+            "Attach file systems to the directory tree",
+            "Encrypt directories"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 72,
+        "subject": "Linux",
+        "question": "What does chmod +x script.sh do?",
+        "options": [
+            "Deletes the script",
+            "Compiles the script",
+            "Makes the script executable",
+            "Schedules the script to run at boot"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 73,
+        "subject": "Linux",
+        "question": "Which of the following symbols represents the root directory?",
+        "options": [
+            "~",
+            "/",
+            "..",
+            "."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 74,
+        "subject": "Linux",
+        "question": "What is the purpose of the /etc/hosts file?",
+        "options": [
+            "Stores DNS server IPs",
+            "Maps IP addresses to hostnames locally",
+            "Lists blocked domains",
+            "Sets SSH server policies"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 75,
+        "subject": "Linux",
+        "question": "Which utility is used to monitor and manage SELinux security contexts?",
+        "options": [
+            "auditctl",
+            "getenforce",
+            "sshd_config",
+            "gpasswd"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 76,
+        "subject": "Linux",
+        "question": "Which command allows you to search for packages in Debian-based distributions?",
+        "options": [
+            "apt update",
+            "apt install",
+            "apt-cache search",
+            "dpkg -i"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 77,
+        "subject": "Linux",
+        "question": "Which command is used to configure a persistent hostname on most modern systems?",
+        "options": [
+            "sethostname",
+            "echo myhost > /etc/hostname",
+            "hostnamectl set-hostname myhost",
+            "sysctl hostname=myhost"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 78,
+        "subject": "Linux",
+        "question": "What type of file is /dev/sda in Linux?",
+        "options": [
+            "Regular file",
+            "Symbolic link",
+            "Device file",
+            "Archive"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 79,
+        "subject": "Linux",
+        "question": "Which of the following allows scheduling tasks on boot for systemd systems?",
+        "options": [
+            "/etc/rc.local",
+            "@reboot in crontab",
+            "systemctl enable <service>",
+            "systemd-reboot.service"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 80,
+        "subject": "Linux",
+        "question": "Which command will count the number of lines in a text file?",
+        "options": [
+            "wc -l file.txt",
+            "cat file.txt | count",
+            "awk '{lines++} END {print lines}' file.txt",
+            "Both A and C"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 81,
+        "subject": "Linux",
+        "question": "Which of the following commands will display a user\u2019s group memberships?",
+        "options": [
+            "groups",
+            "id -Gn",
+            "getent group",
+            "All of the above"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 82,
+        "subject": "Linux",
+        "question": "Which command is used to safely shut down a Linux system immediately?",
+        "options": [
+            "reboot now",
+            "shutdown now",
+            "poweroff",
+            "Both B and C"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 83,
+        "subject": "Linux",
+        "question": "Which environment variable defines the user\u2019s home directory?",
+        "options": [
+            "HOME",
+            "USER",
+            "SHELL",
+            "PATH"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 84,
+        "subject": "Linux",
+        "question": "What is the result of running sudo !!?",
+        "options": [
+            "Executes the previous command as root",
+            "Logs out the user",
+            "Cancels the last command",
+            "Displays sudo history"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 85,
+        "subject": "Linux",
+        "question": "What is the primary purpose of /etc/login.defs?",
+        "options": [
+            "Set cron job defaults",
+            "Define password policies and aging rules",
+            "Map hostnames to IP addresses",
+            "Set up SSH server options"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 86,
+        "subject": "Linux",
+        "question": "Which command shows available disk space on mounted file systems?",
+        "options": [
+            "lsblk",
+            "du",
+            "df",
+            "mount"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 87,
+        "subject": "Linux",
+        "question": "What is the command to create a 2GB swap file?",
+        "options": [
+            "dd if=/dev/zero of=/swapfile bs=1G count=2",
+            "mkfs.swap /swapfile",
+            "touch /swapfile 2G",
+            "swapoff -a"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 88,
+        "subject": "Linux",
+        "question": "Which command would you use to view the contents of a .tar.gz archive without \nextracting it?",
+        "options": [
+            "tar -czf file.tar.gz",
+            "tar -tf file.tar.gz",
+            "gunzip file.tar.gz",
+            "gzip -l file.tar.gz"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 89,
+        "subject": "Linux",
+        "question": "Which command will remove an LVM logical volume?",
+        "options": [
+            "lvremove /dev/vgname/lvname",
+            "vgremove /dev/vgname",
+            "pvremove /dev/sdX",
+            "umount /dev/vgname/lvname"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 90,
+        "subject": "Linux",
+        "question": "Which command is used to modify firewall settings using firewalld on RHEL-based \nsystems?",
+        "options": [
+            "ufw",
+            "iptables",
+            "nft",
+            "firewall-cmd"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 91,
+        "subject": "Linux",
+        "question": "Which command can display detailed information about a specific package on a \nDebian-based system?",
+        "options": [
+            "dpkg -l",
+            "dpkg -s <package>",
+            "apt list",
+            "dpkg --configure"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 92,
+        "subject": "Linux",
+        "question": "What is the primary function of the /var directory?",
+        "options": [
+            "Store user profiles",
+            "Hold system logs and variable data",
+            "Store boot-related files",
+            "Contain installed applications"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 93,
+        "subject": "Linux",
+        "question": "Which Linux command can display the current user ID (UID) and group ID (GID)?",
+        "options": [
+            "groups",
+            "whoami",
+            "id",
+            "env"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 94,
+        "subject": "Linux",
+        "question": "What is the function of the journalctl command?",
+        "options": [
+            "Displays current processes",
+            "Views systemd logs",
+            "Shows scheduled cron jobs",
+            "Displays installed services"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 95,
+        "subject": "Linux",
+        "question": "Which system file stores user password hashes?",
+        "options": [
+            "/etc/passwd",
+            "/etc/shadow",
+            "/etc/login.defs",
+            "/etc/group"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 96,
+        "subject": "Linux",
+        "question": "What command will display your system\u2019s default target (runlevel in systemd)?",
+        "options": [
+            "runlevel",
+            "initctl",
+            "systemctl get-default",
+            "targetctl status"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 97,
+        "subject": "Linux",
+        "question": "What is the difference between > and >> in shell redirection?",
+        "options": [
+            "No difference",
+            "> appends; >> overwrites",
+            "> overwrites; >> appends",
+            "Both delete existing files"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 98,
+        "subject": "Linux",
+        "question": "Which command is used to compare the contents of two files line by line?",
+        "options": [
+            "cat",
+            "cmp",
+            "diff",
+            "ls -l"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 99,
+        "subject": "Linux",
+        "question": "Which of the following is a benefit of using containers?",
+        "options": [
+            "Higher RAM capacity",
+            "GUI virtualization",
+            "Lightweight, portable application environments",
+            "Rootless shell access"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 100,
+        "subject": "Linux",
+        "question": "Which command would be used to reload firewalld after adding a new rule?",
+        "options": [
+            "systemctl restart firewall",
+            "firewalld reload",
+            "firewall-cmd --reload",
+            "iptables --reload"
+        ],
+        "correctIndex": 2
     }
-      ]
+]
