@@ -1200,3 +1200,1193 @@
         "correctIndex": 2
     }
 ]
+[
+    {
+        "id": 1,
+        "subject": "Cloud",
+        "question": "What does AWS stand for?",
+        "options": [
+            "Amazon Web Service",
+            "Amazon Web Solution",
+            "Amazon Cloud Service",
+            "Amazon Cloud Solution"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 2,
+        "subject": "Cloud",
+        "question": "Which of the following is NOT a benefit of using AWS?",
+        "options": [
+            "High availability",
+            "Scalability",
+            "Unlimited upfront costs",
+            "Pay-as-you-go pricing"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 3,
+        "subject": "Cloud",
+        "question": "What is the primary concept behind the AWS \"shared responsibility model\"?",
+        "options": [
+            "AWS is responsible for everything in the cloud.",
+            "The customer is responsible for everything in the cloud.",
+            "AWS manages the security *of* the cloud, and the customer manages security *in* the cloud.",
+            "Both AWS and the customer share equal responsibility for all aspects of security."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 4,
+        "subject": "Cloud",
+        "question": "Which AWS service is designed for compute capacity that is resizable?",
+        "options": [
+            "Amazon S3",
+            "Amazon VPC",
+            "Amazon EC2",
+            "Amazon RDS"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 5,
+        "subject": "Cloud",
+        "question": "What is a key advantage of cloud computing that allows you to pay only for what you use?",
+        "options": [
+            "Fixed pricing",
+            "Upfront commitment",
+            "Pay-as-you-go",
+            "Annual subscription"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 6,
+        "subject": "Cloud",
+        "question": "Which of the following is a virtual server in the AWS cloud?",
+        "options": [
+            "S3 Bucket",
+            "EC2 Instance",
+            "RDS Database",
+            "VPC"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 7,
+        "subject": "Cloud",
+        "question": "What is the purpose of an EC2 instance type?",
+        "options": [
+            "To define the region where the instance will be launched.",
+            "To specify the operating system for the instance.",
+            "To determine the compute, memory, and storage capacity of the instance.",
+            "To set the network connectivity of the instance."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 8,
+        "subject": "Cloud",
+        "question": "Which term describes the ability to increase or decrease the computing capacity for your EC2 instances to meet changing demand?",
+        "options": [
+            "Redundancy",
+            "Elasticity",
+            "Durability",
+            "Availability"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 9,
+        "subject": "Cloud",
+        "question": "What is an Amazon Machine Image (AMI) primarily used for?",
+        "options": [
+            "Storing large files",
+            "Launching EC2 instances",
+            "Managing network traffic",
+            "Creating virtual private clouds"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 10,
+        "subject": "Cloud",
+        "question": "Which component allows you to control inbound and outbound traffic to your EC2 instances at the instance level?",
+        "options": [
+            "Network ACL",
+            "Security Group",
+            "Route Table",
+            "Internet Gateway"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 11,
+        "subject": "Cloud",
+        "question": "What is a Virtual Private Cloud (VPC) in AWS?",
+        "options": [
+            "A global network that connects all AWS regions.",
+            "A logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.",
+            "A service for storing encrypted data in the cloud.",
+            "A dedicated connection between your on-premises network and AWS."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 12,
+        "subject": "Cloud",
+        "question": "Which of the following is a fundamental component of a VPC that divides your network into smaller, isolated segments?",
+        "options": [
+            "Internet Gateway",
+            "Route Table",
+            "Subnet",
+            "Network ACL"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 13,
+        "subject": "Cloud",
+        "question": "What is the purpose of an Internet Gateway (IGW) in a VPC?",
+        "options": [
+            "To connect two VPCs together.",
+            "To allow private subnets to access the internet.",
+            "To enable communication between instances within a VPC.",
+            "To allow resources in your VPC to connect to the internet."
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 14,
+        "subject": "Cloud",
+        "question": "What is a Network Access Control List (NACL) in a VPC?",
+        "options": [
+            "A security layer that acts as a firewall for controlling traffic to and from EC2 instances.",
+            "A security layer that acts as a firewall for controlling traffic in and out of subnets.",
+            "A service for managing IP addresses within a VPC.",
+            "A component for routing traffic between subnets."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 15,
+        "subject": "Cloud",
+        "question": "What is the main difference between a Security Group and a Network ACL?",
+        "options": [
+            "Security Groups are stateless, while Network ACLs are stateful.",
+            "Security Groups operate at the subnet level, while Network ACLs operate at the instance level.",
+            "Security Groups are stateful and operate at the instance level, while Network ACLs are stateless and operate at the subnet level.",
+            "There is no difference; they are interchangeable."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 16,
+        "subject": "Cloud",
+        "question": "An Amazon Machine Image (AMI) provides the information required to launch an EC2 instance, including:",
+        "options": [
+            "The instance type and security group.",
+            "A template for the root volume, launch permissions, and a block device mapping.",
+            "The VPC and subnet ID.",
+            "The pricing model and region."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 17,
+        "subject": "Cloud",
+        "question": "Which of the following can be used to create an AMI?",
+        "options": [
+            "An existing S3 bucket.",
+            "A running EC2 instance.",
+            "An EBS volume.",
+            "A Route 53 hosted zone."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 18,
+        "subject": "Cloud",
+        "question": "What is the benefit of creating a custom AMI?",
+        "options": [
+            "It allows you to launch instances with pre-configured software and settings, saving time.",
+            "It provides a cheaper way to launch EC2 instances.",
+            "It enables you to use different operating systems on the same instance.",
+            "It automatically scales your EC2 instances."
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 19,
+        "subject": "Cloud",
+        "question": "True or False: You can share an AMI with other AWS accounts.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 20,
+        "subject": "Cloud",
+        "question": "When you launch an EC2 instance from an AMI, where is the root device volume created by default?",
+        "options": [
+            "On an S3 bucket.",
+            "As an EBS volume.",
+            "On an instance store.",
+            "In an EFS file system."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 21,
+        "subject": "Cloud",
+        "question": "What is the primary purpose of an EC2 Launch Template?",
+        "options": [
+            "To define the network configuration for a VPC.",
+            "To store a set of predefined parameters for launching EC2 instances.",
+            "To manage access permissions for S3 buckets.",
+            "To automate the creation of EBS snapshots."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 22,
+        "subject": "Cloud",
+        "question": "Which of the following benefits are provided by using Launch Templates instead of Launch Configurations for Auto Scaling groups?",
+        "options": [
+            "Support for more EC2 instance types and purchasing options.",
+            "Automatic scaling of the underlying infrastructure.",
+            "Reduced cost for EC2 instances.",
+            "Enhanced security for data stored on EBS volumes."
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 23,
+        "subject": "Cloud",
+        "question": "A Launch Template can include which of the following parameters?",
+        "options": [
+            "AMI ID",
+            "Instance type",
+            "Security Groups",
+            "All of the above"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 24,
+        "subject": "Cloud",
+        "question": "True or False: You can specify multiple versions of a Launch Template.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 25,
+        "subject": "Cloud",
+        "question": "What is the advantage of using different versions of a Launch Template?",
+        "options": [
+            "It allows for A/B testing of different instance configurations.",
+            "It enables you to easily roll back to previous configurations if needed.",
+            "It provides a way to manage different application versions.",
+            "Both a and b."
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 26,
+        "subject": "Cloud",
+        "question": "What type of storage is Amazon S3 primarily known for?",
+        "options": [
+            "Block storage",
+            "File storage",
+            "Object storage",
+            "Archive storage"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 27,
+        "subject": "Cloud",
+        "question": "What is the maximum size of a single object that can be stored in an S3 bucket?",
+        "options": [
+            "1 GB",
+            "5 GB",
+            "5 TB",
+            "Unlimited"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 28,
+        "subject": "Cloud",
+        "question": "Which of the following is a unique, globally distinct name for an S3 container?",
+        "options": [
+            "Object Key",
+            "Folder",
+            "Bucket Name",
+            "Region Name"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 29,
+        "subject": "Cloud",
+        "question": "Which S3 storage class is designed for frequently accessed data with high durability and availability?",
+        "options": [
+            "S3 Standard",
+            "S3 Glacier",
+            "S3 One Zone-IA",
+            "S3 Intelligent-Tiering"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 30,
+        "subject": "Cloud",
+        "question": "Which S3 feature automatically moves objects between different storage classes based on access patterns?",
+        "options": [
+            "Versioning",
+            "Lifecycle policies",
+            "Cross-Region Replication",
+            "S3 Transfer Acceleration"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 31,
+        "subject": "Cloud",
+        "question": "What is Amazon EFS primarily designed for?",
+        "options": [
+            "Storing object data for web applications.",
+            "Providing scalable file storage for EC2 instances that can be shared across multiple instances.",
+            "Offering block-level storage for a single EC2 instance.",
+            "Archiving rarely accessed data."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 32,
+        "subject": "Cloud",
+        "question": "Which protocol does EFS use for file sharing?",
+        "options": [
+            "HTTP",
+            "SMB",
+            "NFS",
+            "FTP"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 33,
+        "subject": "Cloud",
+        "question": "True or False: EFS file systems are regional resources and can be accessed from EC2 instances in different Availability Zones within the same region.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 34,
+        "subject": "Cloud",
+        "question": "What is a key benefit of EFS regarding scalability?",
+        "options": [
+            "It has a fixed storage capacity that you must pre-provision.",
+            "It automatically scales up and down as you add or remove files.",
+            "You must manually increase its capacity in fixed increments.",
+            "Its capacity is tied to the EC2 instance size."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 35,
+        "subject": "Cloud",
+        "question": "Which use case is EFS well-suited for?",
+        "options": [
+            "Storing boot volumes for EC2 instances.",
+            "Hosting a relational database.",
+            "Providing shared file access for containerized applications.",
+            "Archiving data for compliance."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 36,
+        "subject": "Cloud",
+        "question": "What type of storage is Amazon EBS primarily known for?",
+        "options": [
+            "Object storage",
+            "File storage",
+            "Block storage",
+            "Archive storage"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 37,
+        "subject": "Cloud",
+        "question": "An EBS volume can be attached to how many EC2 instances at a time?",
+        "options": [
+            "One",
+            "Multiple",
+            "Unlimited",
+            "Depends on the instance type"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 38,
+        "subject": "Cloud",
+        "question": "What is a common use case for EBS volumes?",
+        "options": [
+            "Hosting static website content.",
+            "Storing operating systems and application data for EC2 instances.",
+            "Long-term archival of infrequently accessed data.",
+            "Sharing files across multiple EC2 instances simultaneously."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 39,
+        "subject": "Cloud",
+        "question": "What is an EBS Snapshot?",
+        "options": [
+            "A copy of an EC2 instance at a specific point in time.",
+            "A point-in-time backup of an EBS volume stored in S3.",
+            "A read-only replica of an EBS volume.",
+            "A temporary storage for EC2 instance logs."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 40,
+        "subject": "Cloud",
+        "question": "Which EBS volume type is generally recommended for boot volumes and low-latency interactive applications?",
+        "options": [
+            "Cold HDD (sc1)",
+            "Throughput Optimized HDD (st1)",
+            "General Purpose SSD (gp2/gp3)",
+            "Magnetic (standard)"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 41,
+        "subject": "Cloud",
+        "question": "What is the primary purpose of an Elastic Load Balancer (ELB)?",
+        "options": [
+            "To automatically scale EC2 instances based on demand.",
+            "To distribute incoming application traffic across multiple targets, such as EC2 instances.",
+            "To encrypt data stored in S3 buckets.",
+            "To manage DNS records for web applications."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 42,
+        "subject": "Cloud",
+        "question": "Which of the following is NOT a type of Elastic Load Balancer?",
+        "options": [
+            "Application Load Balancer (ALB)",
+            "Network Load Balancer (NLB)",
+            "Classic Load Balancer (CLB)",
+            "Instance Load Balancer (ILB)"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 43,
+        "subject": "Cloud",
+        "question": "Which type of Load Balancer operates at the application layer (Layer 7 of the OSI model) and supports path-based and host-based routing?",
+        "options": [
+            "Network Load Balancer (NLB)",
+            "Classic Load Balancer (CLB)",
+            "Application Load Balancer (ALB)",
+            "Gateway Load Balancer (GLB)"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 44,
+        "subject": "Cloud",
+        "question": "Which type of Load Balancer is best suited for extreme performance and static IP addresses for your application?",
+        "options": [
+            "Application Load Balancer (ALB)",
+            "Network Load Balancer (NLB)",
+            "Classic Load Balancer (CLB)",
+            "Gateway Load Balancer (GLB)"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 45,
+        "subject": "Cloud",
+        "question": "What is a \"Target Group\" in the context of an Application Load Balancer?",
+        "options": [
+            "A group of EC2 instances that share the same security group.",
+            "A collection of EC2 instances or other resources that share the same port and protocol and act as destinations for traffic.",
+            "A set of rules for routing traffic based on URL paths.",
+            "A configuration for health checks of the load balancer itself."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 46,
+        "subject": "Cloud",
+        "question": "What is the fundamental difference between \"Instance Store\" volumes and \"EBS volumes\" for EC2 instances?",
+        "options": [
+            "Instance Store volumes are persistent, while EBS volumes are ephemeral.",
+            "Instance Store volumes are network-attached, while EBS volumes are physically attached to the host.",
+            "Instance Store volumes are ephemeral and physically attached to the host, while EBS volumes are persistent and network-attached.",
+            "There is no significant difference; they are interchangeable."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 47,
+        "subject": "Cloud",
+        "question": "When would you typically choose an Instance Store volume over an EBS volume for your EC2 instance?",
+        "options": [
+            "When you need long-term, persistent storage for your database.",
+            "When your data needs to persist independently of the instance's lifespan.",
+            "When you need temporary storage for caching or scratch data, and high I/O performance is critical.",
+            "When you require shared access to the storage from multiple instances."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 48,
+        "subject": "Cloud",
+        "question": "True or False: If an EC2 instance with an Instance Store volume is stopped or terminated, the data on the Instance Store volume is lost.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 49,
+        "subject": "Cloud",
+        "question": "How can you ensure data durability for an EBS volume if the EC2 instance it's attached to fails?",
+        "options": [
+            "By using Instance Store volumes.",
+            "By taking regular EBS Snapshots.",
+            "By attaching it to multiple EC2 instances.",
+            "By storing data in an S3 bucket instead."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 50,
+        "subject": "Cloud",
+        "question": "Which type of volume provides block-level storage that can be detached from one EC2 instance and attached to another within the same Availability Zone?",
+        "options": [
+            "Instance Store",
+            "EFS",
+            "S3",
+            "EBS"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 51,
+        "subject": "Cloud",
+        "question": "What is an EC2 Reserved Instance?",
+        "options": [
+            "An instance type reserved for specific machine learning workloads.",
+            "A pricing model that allows you to reserve compute capacity for a discounted price over a 1-year or 3-year term.",
+            "An instance that is automatically scaled up during peak hours.",
+            "A dedicated physical server for your exclusive use."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 52,
+        "subject": "Cloud",
+        "question": "Which EC2 pricing model allows you to bid on unused EC2 capacity and can provide the lowest cost, but instances can be interrupted with short notice?",
+        "options": [
+            "On-Demand Instances",
+            "Reserved Instances",
+            "Spot Instances",
+            "Dedicated Hosts"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 53,
+        "subject": "Cloud",
+        "question": "What is an EC2 Auto Scaling group primarily used for?",
+        "options": [
+            "To manually launch new EC2 instances.",
+            "To ensure that you have the correct number of EC2 instances available to handle the load for your application.",
+            "To automatically patch and update EC2 instances.",
+            "To back up EC2 instance data to S3."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 54,
+        "subject": "Cloud",
+        "question": "Which component defines the minimum, maximum, and desired capacity for an Auto Scaling group?",
+        "options": [
+            "Launch Template",
+            "Auto Scaling Policy",
+            "Scaling Plan",
+            "All of the above"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 55,
+        "subject": "Cloud",
+        "question": "What is the purpose of \"user data\" when launching an EC2 instance?",
+        "options": [
+            "To store customer billing information.",
+            "To inject scripts or commands that run when the instance first starts.",
+            "To define the network interfaces of the instance.",
+            "To set the region for the instance."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 56,
+        "subject": "Cloud",
+        "question": "What is a VPC Peering Connection?",
+        "options": [
+            "A connection that allows you to extend your on-premises network to your VPC.",
+            "A networking connection between two VPCs that enables you to route traffic directly between them using private IP addresses.",
+            "A service for monitoring network performance within a VPC.",
+            "A method for connecting your VPC to the internet."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 57,
+        "subject": "Cloud",
+        "question": "True or False: Transitive routing is supported by default with VPC Peering.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 58,
+        "subject": "Cloud",
+        "question": "Which AWS service allows you to create a secure, private connection from your on-premises network to your AWS VPC?",
+        "options": [
+            "Internet Gateway",
+            "VPC Peering",
+            "AWS Direct Connect",
+            "NAT Gateway"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 59,
+        "subject": "Cloud",
+        "question": "What is a NAT Gateway primarily used for in a VPC?",
+        "options": [
+            "To allow instances in a public subnet to access the internet.",
+            "To allow instances in a private subnet to initiate outbound connections to the internet while preventing inbound connections from the internet.",
+            "To translate public IP addresses to private IP addresses for inbound traffic.",
+            "To connect multiple VPCs together."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 60,
+        "subject": "Cloud",
+        "question": "What is the purpose of a Route Table in a VPC?",
+        "options": [
+            "To store security rules for instances.",
+            "To define the rules for routing network traffic from subnets.",
+            "To manage DNS resolution for a VPC.",
+            "To allocate IP addresses to instances."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 61,
+        "subject": "Cloud",
+        "question": "What is S3 Versioning?",
+        "options": [
+            "A feature that allows you to store multiple versions of an object in the same bucket.",
+            "A method for encrypting S3 objects.",
+            "A way to transfer data faster to S3.",
+            "A mechanism for replicating S3 buckets across regions."
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 62,
+        "subject": "Cloud",
+        "question": "Which S3 feature can be used to automatically replicate objects to another S3 bucket in a different AWS Region for disaster recovery?",
+        "options": [
+            "S3 Versioning",
+            "S3 Intelligent-Tiering",
+            "Cross-Region Replication",
+            "S3 Object Lock"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 63,
+        "subject": "Cloud",
+        "question": "What is the purpose of S3 Pre-signed URLs?",
+        "options": [
+            "To grant permanent public access to an S3 object.",
+            "To allow temporary access to an S3 object to users without AWS credentials.",
+            "To enable encrypted uploads to S3.",
+            "To monitor access logs for S3 buckets."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 64,
+        "subject": "Cloud",
+        "question": "Which S3 storage class offers the lowest cost and is ideal for data archiving with retrieval times of minutes to hours?",
+        "options": [
+            "S3 Standard",
+            "S3 Standard-IA",
+            "S3 Glacier",
+            "S3 Outposts"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 65,
+        "subject": "Cloud",
+        "question": "What is the purpose of an S3 Bucket Policy?",
+        "options": [
+            "To control access to individual objects within a bucket.",
+            "To define resource-based access permissions for an entire S3 bucket and its objects.",
+            "To configure lifecycle rules for objects.",
+            "To enable cross-region replication."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 66,
+        "subject": "Cloud",
+        "question": "Which performance mode for EFS is recommended for applications that require the highest level of aggregate throughput and IOPS, for example, big data analytics?",
+        "options": [
+            "General Purpose",
+            "Max I/O",
+            "Bursting",
+            "Provisioned Throughput"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 67,
+        "subject": "Cloud",
+        "question": "What is the recommended way to encrypt data at rest on an EFS file system?",
+        "options": [
+            "Using S3 encryption options.",
+            "Enabling Amazon EFS encryption at rest, which uses AWS Key Management Service (KMS).",
+            "Encrypting data before uploading to EFS manually.",
+            "Using security groups."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 68,
+        "subject": "Cloud",
+        "question": "True or False: EFS can be accessed from on-premises servers using AWS Direct Connect or VPN.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 69,
+        "subject": "Cloud",
+        "question": "Which of the following is a billing dimension for Amazon EFS?",
+        "options": [
+            "Number of EC2 instances connected",
+            "Data stored and throughput mode",
+            "Number of read/write operations",
+            "Time the file system is active"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 70,
+        "subject": "Cloud",
+        "question": "EFS automatically scales storage capacity. What does this mean for users?",
+        "options": [
+            "Users need to manually provision additional storage space as needed.",
+            "Users pay only for the storage they actually use, without needing to provision capacity in advance.",
+            "EFS automatically deletes old files to free up space.",
+            "EFS has a fixed storage limit that cannot be exceeded."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 71,
+        "subject": "Cloud",
+        "question": "Which EBS volume type provides the highest performance for transactional workloads requiring consistent low-latency and high IOPS?",
+        "options": [
+            "General Purpose SSD (gp3)",
+            "Provisioned IOPS SSD (io2)",
+            "Throughput Optimized HDD (st1)",
+            "Cold HDD (sc1)"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 72,
+        "subject": "Cloud",
+        "question": "What is the primary benefit of encrypting EBS volumes?",
+        "options": [
+            "It makes them accessible from different regions.",
+            "It adds an extra layer of security for your data at rest and in transit.",
+            "It improves the performance of the volume.",
+            "It reduces the cost of EBS storage."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 73,
+        "subject": "Cloud",
+        "question": "Can an EBS snapshot be copied across AWS Regions?",
+        "options": [
+            "No, snapshots are region-specific.",
+            "Yes, but only if the volumes are unencrypted.",
+            "Yes, and this is useful for disaster recovery.",
+            "Only if the EC2 instance is also copied."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 74,
+        "subject": "Cloud",
+        "question": "What happens to an EBS volume by default when the EC2 instance it's attached to is terminated?",
+        "options": [
+            "The EBS volume is automatically deleted.",
+            "The EBS volume is detached and remains available.",
+            "The EBS volume is converted to an S3 object.",
+            "The EBS volume is archived to Glacier."
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 75,
+        "subject": "Cloud",
+        "question": "If you need an EBS volume to be accessible by multiple EC2 instances concurrently, which feature might you consider, keeping in mind specific operating system and application requirements?",
+        "options": [
+            "EBS Snapshots",
+            "EBS Multi-Attach (for specific volume types)",
+            "EBS Provisioned IOPS",
+            "EBS Encryption"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 76,
+        "subject": "Cloud",
+        "question": "What is \"sticky sessions\" or \"session affinity\" in the context of Load Balancers?",
+        "options": [
+            "It ensures that a client's requests are always routed to the same availability zone.",
+            "It ensures that a client's requests are routed to the same target (e.g., EC2 instance) for the duration of their session.",
+            "It keeps the load balancer alive even if all targets fail.",
+            "It prioritizes traffic from certain IP addresses."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 77,
+        "subject": "Cloud",
+        "question": "What is the main benefit of enabling cross-zone load balancing for an ELB?",
+        "options": [
+            "It ensures that traffic is distributed evenly across all registered targets in all enabled Availability Zones, improving fault tolerance.",
+            "It allows the load balancer to span multiple AWS regions.",
+            "It reduces the cost of the load balancer.",
+            "It speeds up DNS resolution for the load balancer."
+        ],
+        "correctIndex": 0
+    },
+    {
+        "id": 78,
+        "subject": "Cloud",
+        "question": "Which of the following can be used as targets for an Application Load Balancer?",
+        "options": [
+            "EC2 instances",
+            "IP addresses",
+            "Lambda functions",
+            "All of the above"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 79,
+        "subject": "Cloud",
+        "question": "What is a \"listener\" on an Elastic Load Balancer?",
+        "options": [
+            "A component that checks the health of registered targets.",
+            "A process that checks for incoming connection requests on a specific port and protocol.",
+            "A set of rules that forward requests to different target groups.",
+            "The entry point for all incoming traffic to the load balancer."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 80,
+        "subject": "Cloud",
+        "question": "For HTTPS listeners, where does the SSL/TLS certificate need to be installed?",
+        "options": [
+            "On each EC2 instance.",
+            "On the Application Load Balancer itself.",
+            "On the client's browser.",
+            "In an S3 bucket."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 81,
+        "subject": "Cloud",
+        "question": "Which AWS service provides a global network of content delivery points (edge locations) to cache content closer to users for faster delivery?",
+        "options": [
+            "Amazon S3",
+            "Amazon CloudFront",
+            "Amazon Route 53",
+            "Amazon VPC"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 82,
+        "subject": "Cloud",
+        "question": "What does an AWS Region consist of?",
+        "options": [
+            "A single data center.",
+            "One or more isolated locations known as Availability Zones.",
+            "A collection of edge locations.",
+            "A global network of servers."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 83,
+        "subject": "Cloud",
+        "question": "What is the primary benefit of deploying applications across multiple Availability Zones within an AWS Region?",
+        "options": [
+            "Reduced cost.",
+            "Increased performance.",
+            "Enhanced fault tolerance and high availability.",
+            "Simplified network configuration."
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 84,
+        "subject": "Cloud",
+        "question": "Which AWS service helps you to manage and govern your AWS resources, and automate operational tasks?",
+        "options": [
+            "AWS IAM",
+            "AWS CloudWatch",
+            "AWS Systems Manager",
+            "AWS Organizations"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 85,
+        "subject": "Cloud",
+        "question": "Which AWS service allows you to create and manage users, groups, and roles, and control access to AWS resources?",
+        "options": [
+            "AWS Config",
+            "AWS Trusted Advisor",
+            "AWS Identity and Access Management (IAM)",
+            "AWS Directory Service"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 86,
+        "subject": "Cloud",
+        "question": "If you want to host a static website on AWS, which two services are typically used together?",
+        "options": [
+            "EC2 and EBS",
+            "S3 and CloudFront",
+            "RDS and VPC",
+            "Lambda and API Gateway"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 87,
+        "subject": "Cloud",
+        "question": "Which service would you use to store a large amount of unstructured data, like images or videos, in a highly durable and scalable manner?",
+        "options": [
+            "Amazon RDS",
+            "Amazon DynamoDB",
+            "Amazon S3",
+            "Amazon Redshift"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 88,
+        "subject": "Cloud",
+        "question": "You need to run a batch processing job that requires significant compute power for a short period and can tolerate interruptions. Which EC2 purchasing option would be most cost-effective?",
+        "options": [
+            "On-Demand",
+            "Reserved Instances",
+            "Spot Instances",
+            "Dedicated Hosts"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 89,
+        "subject": "Cloud",
+        "question": "Your application needs shared file storage that can be accessed by multiple EC2 instances concurrently. Which service is suitable?",
+        "options": [
+            "Amazon EBS",
+            "Amazon S3",
+            "Amazon EFS",
+            "Amazon Instance Store"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 90,
+        "subject": "Cloud",
+        "question": "You want to secure your EC2 instances by controlling both inbound and outbound traffic at the instance level. Which security feature should you configure?",
+        "options": [
+            "Network ACLs",
+            "Route Tables",
+            "Internet Gateway",
+            "Security Groups"
+        ],
+        "correctIndex": 3
+    },
+    {
+        "id": 91,
+        "subject": "Cloud",
+        "question": "You are designing a highly available web application. Which combination of AWS services would you typically use to ensure high availability and scalability?",
+        "options": [
+            "Single EC2 instance, S3 Standard",
+            "EC2 Auto Scaling, Application Load Balancer, Multi-AZ RDS",
+            "Dedicated Host, Instance Store",
+            "VPC Peering, Direct Connect"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 92,
+        "subject": "Cloud",
+        "question": "Your application stores customer photos. You want to ensure that if a photo is accidentally deleted, you can recover it. Which S3 feature should be enabled?",
+        "options": [
+            "S3 Lifecycle Policies",
+            "S3 Transfer Acceleration",
+            "S3 Versioning",
+            "S3 Object Lock"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 93,
+        "subject": "Cloud",
+        "question": "You have an application running on EC2 instances in a private subnet. These instances need to download updates from the internet, but you don't want them to be directly accessible from the internet. How would you configure this?",
+        "options": [
+            "Attach an Internet Gateway directly to the private subnet.",
+            "Use a NAT Gateway in a public subnet and configure a route from the private subnet to the NAT Gateway.",
+            "Assign Elastic IPs to the instances in the private subnet.",
+            "Use a VPC Peering connection to an internet-connected VPC."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 94,
+        "subject": "Cloud",
+        "question": "You need to create a custom template for launching EC2 instances with a specific operating system, pre-installed software, and networking configuration. Which AWS component is best suited for this?",
+        "options": [
+            "A new EC2 instance",
+            "An Amazon Machine Image (AMI)",
+            "An S3 bucket",
+            "A CloudFormation template"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 95,
+        "subject": "Cloud",
+        "question": "To ensure your application can handle sudden spikes in traffic, what AWS service should you implement in front of your EC2 instances?",
+        "options": [
+            "AWS Direct Connect",
+            "Amazon SQS",
+            "Elastic Load Balancer (ELB)",
+            "Amazon CloudWatch"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 96,
+        "subject": "Cloud",
+        "question": "You want to store critical database backups. Which storage service offers extremely high durability and is designed for infrequently accessed data that needs to be retained for long periods?",
+        "options": [
+            "Amazon EBS",
+            "Amazon EFS",
+            "Amazon S3 Glacier Deep Archive",
+            "Amazon Instance Store"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 97,
+        "subject": "Cloud",
+        "question": "Your development team needs shared storage for their code repository that multiple EC2 instances can mount and access simultaneously using a file system interface. Which service is ideal?",
+        "options": [
+            "Amazon EBS",
+            "Amazon S3",
+            "Amazon EFS",
+            "Amazon DynamoDB"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "id": 98,
+        "subject": "Cloud",
+        "question": "You want to define a standard set of parameters for launching your EC2 instances, including AMI ID, instance type, security groups, and user data, for use with Auto Scaling. What should you use?",
+        "options": [
+            "An EC2 Security Group",
+            "An EC2 Launch Template",
+            "An EC2 Key Pair",
+            "An EBS Snapshot"
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 99,
+        "subject": "Cloud",
+        "question": "An EC2 instance's root volume is an EBS volume. You need to increase its size without downtime. What AWS feature allows this?",
+        "options": [
+            "Detach and re-attach a larger volume.",
+            "Modify the EBS volume in the console or CLI.",
+            "Take a snapshot and restore to a larger volume.",
+            "You cannot resize the root volume without downtime."
+        ],
+        "correctIndex": 1
+    },
+    {
+        "id": 100,
+        "subject": "Cloud",
+        "question": "You are managing access to your AWS account. Which IAM entity represents a temporary set of permissions that you can assume, and is often used for cross-account access or for EC2 instances to interact with other AWS services?",
+        "options": [
+            "IAM User",
+            "IAM Group",
+            "IAM Role",
+            "IAM Policy"
+        ],
+        "correctIndex": 2
+    }
+]
